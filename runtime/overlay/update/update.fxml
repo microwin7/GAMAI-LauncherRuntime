@@ -7,7 +7,9 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
@@ -15,47 +17,75 @@
 
 <!-- DrLeonardo Design for GravitLauncher-->
 
-<Pane fx:id="overlay" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane fx:id="overlay" prefHeight="630.0" prefWidth="1130.0" xmlns="http://javafx.com/javafx/8.0.171"
+      xmlns:fx="http://javafx.com/fxml/1">
     <stylesheets>
-        <URL value="@update.css" />
-        <URL value="@../../global.css" />
+        <URL value="@update.css"/>
+        <URL value="@../../global.css"/>
     </stylesheets>
-    <Text id="headingUpdate" layoutX="107.0" layoutY="182.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%runtime.overlay.update.update.headingUpdate" wrappingWidth="435.7734069824219" />
-    <Label id="speed" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="471.0" layoutY="152.0" prefHeight="27.0" prefWidth="319.0" text="23.5 mb/s" textAlignment="RIGHT" textFill="#b3b8d5">
+    <Text id="headingUpdate" layoutX="319.0" layoutY="257.0" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="%runtime.overlay.update.update.headingUpdate" wrappingWidth="435.7734069824219"/>
+    <Label id="volume" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="471.0" layoutY="177.0" prefHeight="27.0"
+           prefWidth="319.0" textAlignment="RIGHT" textFill="#b3b8d5" visible="false">
         <font>
-            <Font size="18.0" />
+            <Font size="18.0"/>
         </font>
     </Label>
-    <Label id="volume" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="471.0" layoutY="177.0" prefHeight="27.0" prefWidth="319.0" textAlignment="RIGHT" textFill="#b3b8d5">
-        <font>
-          <Font size="18.0" />
-        </font>
-    </Label>
-    <ProgressBar id="progress" layoutX="112.0" layoutY="244.0" prefHeight="12.0" prefWidth="675.0" progress="0.0" />
-    <Circle id="phase1" fill="DODGERBLUE" layoutX="130.0" layoutY="250.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" styleClass="phasepassive" />
-    <Circle id="phase2" fill="DODGERBLUE" layoutX="290.0" layoutY="250.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" styleClass="phasepassive" />
-    <Circle id="phase3" fill="DODGERBLUE" layoutX="450.0" layoutY="250.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" styleClass="phasepassive" />
-    <Circle id="phase4" fill="DODGERBLUE" layoutX="610.0" layoutY="250.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" styleClass="phasepassive" />
-    <Circle id="phase5" fill="DODGERBLUE" layoutX="770.0" layoutY="250.0" radius="20.0" stroke="BLACK" strokeType="INSIDE" styleClass="phasepassive" />
-    <TextArea id="outputUpdate" editable="false" layoutX="107.0" layoutY="290.0" prefHeight="210.0" prefWidth="688.0">
+    <ProgressBar id="progress" layoutX="112.0" layoutY="244.0" prefHeight="12.0" prefWidth="675.0" progress="0.0"
+                 visible="false"/>
+    <Circle id="phase1" fill="DODGERBLUE" layoutX="130.0" layoutY="250.0" radius="20.0" stroke="BLACK"
+            strokeType="INSIDE" styleClass="phasepassive" visible="false"/>
+    <Circle id="phase2" fill="DODGERBLUE" layoutX="290.0" layoutY="250.0" radius="20.0" stroke="BLACK"
+            strokeType="INSIDE" styleClass="phasepassive" visible="false"/>
+    <Circle id="phase3" fill="DODGERBLUE" layoutX="450.0" layoutY="250.0" radius="20.0" stroke="BLACK"
+            strokeType="INSIDE" styleClass="phasepassive" visible="false"/>
+    <Circle id="phase4" fill="DODGERBLUE" layoutX="610.0" layoutY="250.0" radius="20.0" stroke="BLACK"
+            strokeType="INSIDE" styleClass="phasepassive" visible="false"/>
+    <Circle id="phase5" fill="DODGERBLUE" layoutX="770.0" layoutY="250.0" radius="20.0" stroke="BLACK"
+            strokeType="INSIDE" styleClass="phasepassive" visible="false"/>
+    <TextArea id="outputUpdate" editable="false" layoutX="308.0" layoutY="268.0" prefHeight="263.0" prefWidth="688.0"
+              text="Download mods...&#10;Download config...">
         <padding>
-          <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0"/>
         </padding>
     </TextArea>
-    <Button id="hide" alignment="CENTER" contentDisplay="CENTER" layoutX="785.0" layoutY="31.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#c6c6c6">
-        <graphic>
-          <SVGPath id="icons" content="M5 5V27H27V5H5ZM7 7H25V25H7V7ZM9 20V22H23V20H9Z&#10;" />
-        </graphic>
-        <tooltip>
-          <Tooltip id="hideTooltip" text="%runtime.overlay.update.update.hideTooltip" />
-        </tooltip>
-    </Button>
-    <Button id="close" alignment="CENTER" contentDisplay="CENTER" layoutX="829.0" layoutY="31.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
-        <graphic>
-          <SVGPath id="icons" content="M5 5V27H27V5H5ZM7 7H25V25H7V7ZM11.6875 10.3125L10.2812 11.7188L14.5625 16L10.2188 20.3438L11.625 21.75L15.9688 17.4062L20.2812 21.7188L21.6875 20.3125L17.375 16L21.625 11.75L20.2188 10.3438L15.9688 14.5938L11.6875 10.3125Z&#10;" />
-        </graphic>
-        <tooltip>
-          <Tooltip id="closeTooltip" text="%runtime.overlay.update.update.closeTooltip" />
-        </tooltip>
-    </Button>
+    <StackPane layoutX="79.0" layoutY="232.0">
+        <children>
+            <SVGPath id="firstPath"
+                     content="M82.8,165.6C37.1,165.6,0,128.5,0,82.8C0,67,4.5,51.7,13,38.3L7.5,7.5L38.3,13C56.2,1.6,77.4-2.5,98.3,1.5c21.7,4.1,40.5,16.5,53,34.8c9.4,13.8,14.3,29.9,14.3,46.5C165.6,128.5,128.5,165.6,82.8,165.6z M22.3,22.3L25.6,41l-1.4,2C16.2,54.8,12,68.6,12,82.8c0,39,31.8,70.8,70.8,70.8s70.8-31.8,70.8-70.8c0-14.2-4.2-28-12.2-39.8C119.4,10.7,75.3,2.3,43,24.3l-2,1.4L22.3,22.3z"/>
+            <SVGPath id="secondPath"
+                     content="M54.1,108H54C24.3,108,0.1,83.8,0,54.1c0-3.3,2.7-6,6-6c0,0,0,0,0,0c3.3,0,6,2.7,6,6C12,77.2,30.8,95.9,53.9,96l0.2,0c3.3,0,6,2.7,6,6C60.1,105.3,57.4,107.9,54.1,108L54.1,108z M54.1,102.2L54.1,102.2V102V102.2z M102,60c-3.3,0-6-2.7-6-6c0-23.1-18.9-42-42-42h-0.1c-3.3,0-6-2.7-6-6s2.7-6,6-6H54c29.8,0,54,24.2,54,54C108,57.3,105.3,60,102,60C102,60,102,60,102,60z"/>
+            <Label id="speed" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="23.5 mb/s" textAlignment="RIGHT"
+                   textFill="#b3b8d5">
+                <font>
+                    <Font size="18.0"/>
+                </font>
+            </Label>
+        </children>
+    </StackPane>
+    <Label id="header" layoutX="34.0" layoutY="30.0" text="%runtime.overlay.update.update.header"/>
+    <HBox layoutX="1026.0" layoutY="24.0" spacing="3.0">
+        <children>
+            <Button id="hide" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="40.0"
+                    textAlignment="CENTER" textFill="#c6c6c6">
+                <graphic>
+                    <SVGPath id="icons"
+                             content="M3.37008 0C1.79893 0 0.512939 1.28599 0.512939 2.85714V21.1429C0.512939 22.714 1.79893 24 3.37008 24H21.6558C23.2269 24 24.5129 22.714 24.5129 21.1429V2.85714C24.5129 1.28599 23.2269 0 21.6558 0H3.37008ZM3.37008 1.14286H21.6558C22.6092 1.14286 23.3701 1.90372 23.3701 2.85714V21.1429C23.3701 22.0963 22.6092 22.8571 21.6558 22.8571H3.37008C2.41666 22.8571 1.6558 22.0963 1.6558 21.1429V2.85714C1.6558 1.90372 2.41666 1.14286 3.37008 1.14286ZM6.22723 16C5.60262 16 5.08437 16.5182 5.08437 17.1429V18.2857C5.08437 18.9103 5.60262 19.4286 6.22723 19.4286H18.7987C19.4233 19.4286 19.9415 18.9103 19.9415 18.2857V17.1429C19.9415 16.5182 19.4233 16 18.7987 16H6.22723ZM6.22723 17.1429H18.7987V18.2857H6.22723V17.1429Z"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip id="hideTooltip" text="%runtime.scenes.servermenu.servermenu.hideTooltip"/>
+                </tooltip>
+            </Button>
+            <Button id="close" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="40.0"
+                    textAlignment="CENTER" textFill="#464646">
+                <graphic>
+                    <SVGPath id="icons"
+                             content="M3.37008 0C1.79893 0 0.512939 1.28599 0.512939 2.85714V21.1429C0.512939 22.714 1.79893 24 3.37008 24H21.6558C23.2269 24 24.5129 22.714 24.5129 21.1429V2.85714C24.5129 1.28599 23.2269 0 21.6558 0H3.37008ZM3.37008 1.14286H21.6558C22.6092 1.14286 23.3701 1.90372 23.3701 2.85714V21.1429C23.3701 22.0963 22.6092 22.8571 21.6558 22.8571H3.37008C2.41666 22.8571 1.6558 22.0963 1.6558 21.1429V2.85714C1.6558 1.90372 2.41666 1.14286 3.37008 1.14286ZM7.7741 6.45312L6.96606 7.26116L11.7049 12L6.96606 16.7388L7.7741 17.5469L12.5129 12.808L17.2518 17.5469L18.0598 16.7388L13.321 12L18.0598 7.26116L17.2518 6.45312L12.5129 11.192L7.7741 6.45312Z"/>
+                </graphic>
+                <tooltip>
+                    <Tooltip id="closeTooltip" text="%runtime.scenes.servermenu.servermenu.closeTooltip"/>
+                </tooltip>
+            </Button>
+        </children>
+    </HBox>
 </Pane>

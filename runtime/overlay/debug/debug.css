@@ -1,49 +1,38 @@
 /*-- DrLeonardo Design for GravitLauncher --*/
-#debugBackground {
-    -fx-background-color: transparent;
-    -fx-background-size: cover;
-    -fx-background-image: url('../../images/servermenu.png');
-}
-
 #debugPane {
     -fx-background-color: transparent;
+    -fx-background-image: url("../../images/console_background.png");
+    -fx-background-size: cover;
 }
 
-#headingDebug {
-    -fx-fill: #323232;
-    -fx-font-weight: bold;
-    -fx-font-size: 14pt;
-}
-
-/* Outputs */
 #output {
-    -fx-background-color: #FAFAFA;
+    -fx-background-color: transparent;
     -fx-background-radius: 0;
-    -fx-font-family: monospace;
+    -fx-font-family: Consolas;
     -fx-font-size: 8pt;
+    -fx-padding: 0 0 0 0;
 }
 
 #output .content,
 #output .content {
-    -fx-background-color: #FAFAFA;
+    -fx-background-color: transparent;
     -fx-background-radius: 0;
+}
+
+#header {
+    -fx-font-family: Roboto;
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+    -fx-text-fill: #2F2F2F;
+    -fx-fill: #2F2F2F;
 }
 
 #kill, #copy, #hastebin {
-    -fx-background-radius: 0;
-    -fx-pref-width: 50px;
-    -fx-pref-height: 50px;
     -fx-background-color: transparent;
-    -fx-background-size: cover;
-    -fx-font-size: 13pt;
 }
 
-#copy:hover,
-#copy:pressed,
-#hastebin:hover,
-#hastebin:pressed,
-#kill:hover,
-#kill:pressed {
-    -fx-background-color: rgba(254, 254, 255, 0.1);
+#back {
+    -fx-padding: 0 0 0 0;
 }
+
 /*-- DrLeonardo Design for GravitLauncher --*/

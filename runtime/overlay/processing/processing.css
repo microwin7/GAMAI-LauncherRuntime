@@ -1,11 +1,45 @@
-/*-- DrLeonardo Design for GravitLauncher --*/
-#overlay > #description {
-    -fx-fill: #fff;
-    -fx-font-size: 16px;
-    -fx-effect: dropshadow( three-pass-box, rgba(0, 0, 0, 0.6), 8, 0.0, 0, 0);
+@font-face {
+    font-family: "TTNorms Bold";
+    src: url("../../fonts/TTNorms-Bold.ttf");
 }
 
-#overlay > #description.error {
-    -fx-text-fill: #A23131;
+#processingOverlay {
+    -fx-background-color: transparent;
 }
-/*-- DrLeonardo Design for GravitLauncher --*/
+
+#processingOverlay #description {
+    -fx-max-width: 500;
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 16;
+    -fx-font-family: "TTNorms Bold";
+    -fx-font-weight: bold;
+    -fx-padding: 60 0 0 0;
+}
+
+#processingOverlay SVGPath {
+    -fx-fill: #D45F10;
+}
+
+#processingOverlay #firstPath {
+    -fx-scale-x: 1.6;
+    -fx-scale-y: 1.6;
+}
+
+#processingOverlay #secondPath {
+    -fx-scale-x: 1.6;
+    -fx-scale-y: 1.6;
+}
+
+#loginPane #processingOverlay #description {
+    -fx-max-width: 300;
+}
+
+#loginPane #processingOverlay #firstPath {
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}
+
+#loginPane #processingOverlay #secondPath {
+    -fx-scale-x: 1;
+    -fx-scale-y: 1;
+}

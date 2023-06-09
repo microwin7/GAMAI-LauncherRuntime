@@ -1,66 +1,57 @@
 /*-- DrLeonardo Design for GravitLauncher --*/
 
-#consoleBackground {
-    -fx-background-color: transparent;
-    -fx-background-size: cover;
-    -fx-background-image: url('../../images/servermenu.png');
-}
-
 #consolePane {
     -fx-background-color: transparent;
+    -fx-background-image: url("../../images/console_background.png");
+    -fx-background-size: cover;
 }
-
-#headingConsole {
-    -fx-fill: #323232;
-    -fx-font-weight: bold;
-    -fx-font-size: 14pt;
-}
-
 
 /* Outputs */
 
+#form {
+    -fx-background-color: #F9F9F9;
+    -fx-background-radius: 0 0 10 10;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 10, 0, 0, -4);
+}
+
 #output {
-    -fx-background-color: #FAFAFA;
+    -fx-background-color: transparent;
     -fx-background-radius: 0;
-    -fx-font-family: monospace;
+    -fx-font-family: Consolas;
     -fx-font-size: 8pt;
-    -fx-padding: 10 10 10 10px;
+    -fx-padding: 0 0 0 0;
 }
 
 #output .content,
 #output .content {
-    -fx-background-color: #FAFAFA;
+    -fx-background-color: transparent;
     -fx-background-radius: 0;
 }
 
 #send {
-    -fx-font-size: 13pt;
-    -fx-background-color: #eee;
-    -fx-text-fill: #323232;
-}
-
-#send:hover,
-#send:pressed {
-    -fx-background-color: #EAEAEA;
-}
-
-#wiki {
-    -fx-background-radius: 0;
-    -fx-pref-width: 50px;
-    -fx-pref-height: 50px;
+    -fx-font-family: Roboto;
+    -fx-font-weight: bold;
+    -fx-background-insets: 0 0 0 0;
+    -fx-font-size: 14;
     -fx-background-color: transparent;
-    -fx-background-size: cover;
-    -fx-font-size: 13pt;
+    -fx-text-fill: #2F2F2F;
 }
 
-#wiki:hover,
-#wiki:pressed {
-    -fx-background-color: rgba(254, 254, 255, 0.1);
+
+#header {
+    -fx-font-family: Roboto;
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+    -fx-text-fill: #2F2F2F;
+    -fx-fill: #2F2F2F;
 }
 
-.commandInputClass {
-    -fx-background-radius: 0;
-    -fx-background-color: #eee;
+#commandInput {
+    -fx-font-size: 13;
+    -fx-background-color: transparent;
+    -fx-text-fill: #2F2F2F;
+    -fx-prompt-text-fill: #2F2F2F;
+    -fx-padding: 0 0 0 5;
 }
 
 

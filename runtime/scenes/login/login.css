@@ -1,29 +1,42 @@
 /*-- DrLeonardo Design for GravitLauncher --*/
 
+@font-face {
+    font-family: "TTNorms Bold";
+    src: url("../../fonts/TTNorms-Bold.ttf");
+}
+
 /* Backgrounds */
 #layout {
     -fx-background-color: transparent;
     -fx-background-size: cover;
-    -fx-background-image: url('../../images/login.png');
+    -fx-background-image: url('../../images/auth_background.png');
 }
 
 #loginPane,
-#serverPaneLayout {
+#serverPaneLayout,
+#closeAbout, #aboutAct {
     -fx-background-color: transparent;
 }
 
 #password,
 #login {
-    -fx-background-radius: 0;
+    -fx-pref-width: 280;
+    -fx-pref-height: 50;
+    -fx-background-radius: 5;
+    -fx-background-color: rgba(0, 0, 0, 0.19);
+    -fx-prompt-text-fill: rgba(255, 255, 255, 0.5);
+    -fx-text-fill: rgba(255, 255, 255, 0.8);
+    -fx-font-family: "TTNorms Bold";
 }
 
 #goAuth {
     -fx-background-color: transparent;
     -fx-background-repeat: no-repeat;
-    -fx-background-image: url('../../images/icons/auth.png');
+    -fx-padding: 0 0 0 0;
     -fx-text-fill: #fff;
     -fx-font-weight: bold;
     -fx-font-size: 11pt;
+    -fx-font-family: "TTNorms Bold";
 }
 
 #logo {
@@ -32,29 +45,27 @@
 
 #auth_on:hover,
 #auth_on:pressed {
-    -fx-effect: dropshadow( three-pass-box, rgba(0, 0, 0, 0.6), 8, 0.0, 0, 0);
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.6), 8, 0.0, 0, 0);
 }
 
-#savePassword,
-#autoenter {
-    -fx-font-size: 8pt;
-    -fx-text-fill: #5E5E5E;
+#about Pane {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 10;
 }
 
-#forgotPass {
-    -fx-font-size: 8pt;
-    -fx-text-fill: #A9A9A9;
-}
-
-#forgotPass:hover,
-#forgotPass:pressed {
-    -fx-text-fill: #606060;
-}
-
-#createAccount {
-    -fx-font-size: 10pt;
+.hyperlink {
+    -fx-text-fill: #ffffff;
+    -fx-border-color: transparent;
+    -fx-padding: 0;
+    -fx-underline: false;
+    -fx-font-size: 12;
+    -fx-font-family: "TTNorms Bold";
     -fx-font-weight: bold;
-    -fx-text-fill: #FFDE6B;
+}
+
+.hyperlink:hover,
+.hyperlink:pressed {
+    -fx-underline: true;
 }
 
 #textLogin {
@@ -72,62 +83,8 @@
     -fx-fill: #fff;
 }
 
-#combologin {
-    -fx-text-fill: #606060;
-    -fx-prompt-text-fill: #A9A9A9;
-    -fx-font-weight: bold;
-    -fx-font-size: 11pt;
-    -fx-pref-width: 280px;
-    -fx-pref-height: 45px;
-}
-
-.combologin,
-.combologin {
-    -fx-font-size: 11px;
-    -fx-prompt-text-fill: #A9A9A9;
-    -fx-text-fill: #606060;
-    -fx-background-color: transparent;
-}
-
-.combologin .list-cell {
-    -fx-background: #EDEEEF;
-    -fx-background-color: transparent;
-}
-
-.combologin-popup .list-view {
-    -fx-background-color: #EDEEEF, #EDEEEF;
-    -fx-background-insets: 0, 1;
-    -fx-effect: dropshadow( three-pass-box, rgba(0, 0, 0, 0.3), 3, 0.0, 0, 0);
-}
-
-.combologin .list-cell:filled:selected .text,
-.combologin .list-cell:filled:selected .text {
-    -fx-fill: #A9A9A9;
-}
-
-.combologin .arrow,
-.combologin .arrow {
-    -fx-background-color: #A9A9A9;
-}
-
-.combologin-popup .list-view .list-cell {
-    -fx-background-color: #EDEEEF;
-}
-
-.combologin-popup .list-view .list-cell:filled:selected,
-.combologin-popup .list-view .list-cell:filled:selected:hover {
-    -fx-background: #EDEEEF;
-    -fx-background-color: #EDEEEF;
-    -fx-text-fill: -fx-selection-bar-text;
-}
-
-.combologin-popup .list-view .list-cell:filled:hover {
-    -fx-background-color: #EDEEEF;
-    -fx-text-fill: -fx-text-inner-color;
-}
-
 #iconsLogin {
-    -fx-fill: #fff;
+    -fx-fill: #CCCCCC;
 }
 
 /*-- DrLeonardo Design for GravitLauncher --*/

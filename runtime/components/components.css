@@ -1,5 +1,15 @@
 /*-- DrLeonardo Design for GravitLauncher --*/
 
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: "TTNorms Bold";
+    src: url("../fonts/TTNorms-Bold.ttf");
+}
+
 #dialogBackground {
     -fx-background-color: transparent;
 }
@@ -14,7 +24,8 @@
 }
 
 .serverButtons {
-    -fx-background-color: transparent;
+    -fx-background-color: rgba(26, 26, 26, 0.04);
+    -fx-background-radius: 10;
 }
 
 .serverButtonsActive {
@@ -22,37 +33,51 @@
 }
 
 #online {
-    -fx-fill: #FFDE6B;
+    -fx-text-fill: #2F2F2F;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-font-family: Roboto;
+}
+
+#max {
+    -fx-text-fill: #2F2F2F;
     -fx-font-size: 14px;
-    -fx-font-weight: bold;
+    -fx-font-family: Roboto;
+    -fx-padding: 0 0 2 0;
 }
 
-#serverLogo {
-    -fx-background-position: center;
-    -fx-background-color: transparent;
-    -fx-background-image: url('../images/preloader/logo.png');
-}
-
-#nameServer {
-    -fx-fill: #2C2C2C;
-    -fx-text-fill: #2C2C2C;
-    -fx-font-size: 20px;
-    -fx-wrap-text: false;
+#serverTitle {
+    -fx-font-family: "TTNorms Bold";
+    -fx-font-size: 24px;
+    -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
-}
-
-#nameServer:hover {
-    -fx-fill: #7C4DFF;
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
-    -fx-wrap-text: false;
 }
 
 #genreServer {
-    -fx-fill: #808080;
+    -fx-text-fill: #E7E7E7;
+    -fx-font-family: "TTNorms Bold";
     -fx-font-size: 12px;
+    -fx-font-weight: bold;
 }
 
+/* Statistics cell */
+
+#statCell {
+
+}
+
+#statPath {
+
+}
+
+#statValue {
+    -fx-text-fill: #2F2F2F;
+    -fx-font-family: "TTNorms Bold";
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+}
+
+/* Dialogs */
 #headingDialog {
     -fx-fill: #323232;
     -fx-font-weight: bold;
@@ -82,8 +107,16 @@
 #dialogPane,
 #dialogApplyPane,
 #dialogTextInput {
-    -fx-background-color: #fff;
-    -fx-border-color: #C7C7C7;
+    -fx-background-radius: 10;
+    -fx-background-color: #ffffff;
+}
+
+#dialogPane #apply,
+#dialogApplyPane #apply,
+#dialogTextInput #apply {
+    -fx-background-radius: 0 0 10 10;
+    -fx-background-insets: 0;
+    -fx-background-color: #D45F10;
 }
 
 #forgot2fa {

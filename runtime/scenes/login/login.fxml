@@ -8,94 +8,135 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <!-- DrLeonardo Design for GravitLauncher-->
 
-<Pane fx:id="loginPane" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-    <stylesheets>
-        <URL value="@login.css" />
-        <URL value="@../../global.css" />
-    </stylesheets>
-    <Pane fx:id="layout" prefHeight="500.0" prefWidth="900.0">
-        <Pane fx:id="authPane" prefHeight="500.0" prefWidth="900.0">
-            <SVGPath content="&#10;M12.9234 0.0994307L32.3961 71.1336L34.3202 105.281L23.1027 73.6293L15.1604 16.5845L12.9234 0.0994307Z&#10;" fill="#323232" layoutX="33.0" layoutY="42.0" />
-            <SVGPath id="logo" content="M0 40.8153L73.9399 0L94.618 12.4627L23.4979 53.5896V113.41L72.6867 140.517L123.129 113.41V53.5896L108.09 47.3582L60.1545 76.0224V89.1082L74.5665 97.5205V84.7463L108.09 64.4944V103.752L72.6867 125.562L37.2833 103.752V62.3134L108.09 21.1866L146 40.8153L144.747 125.562L72.6867 167L0 125.562V40.8153Z" layoutX="135.0" layoutY="59.0" />
-            <SVGPath content="&#10;M12.9234 0.0994307L32.3961 71.1336L34.3202 105.281L23.1027 73.6293L15.1604 16.5845L12.9234 0.0994307Z&#10;" fill="#323232" layoutX="327.0" layoutY="120.0" />
-            <TextField id="login" layoutX="80.0" layoutY="233.0" prefHeight="45.0" prefWidth="280.0" promptText="%runtime.scenes.login.login.login">
-                <font>
-                    <Font size="16.0" />
-                </font>
-            </TextField>
-            <PasswordField id="password" layoutX="79.0" layoutY="289.0" prefHeight="45.0" prefWidth="218.0" promptText="%runtime.scenes.login.login.password">
-                <font>
-                    <Font size="16.0" />
-                </font>
-            </PasswordField>
-            <ComboBox id="combologin" fx:id="authOptions" layoutX="78.0" layoutY="345.0" prefWidth="150.0" promptText="%runtime.scenes.login.login.combologin">
-                <styleClass>
-                    <String fx:value="combologin" />
-                    <String fx:value="combologin-popup" />
-                </styleClass>
-            </ComboBox>
-            <Button id="goAuth" defaultButton="true" layoutX="303.0" layoutY="258.0" prefHeight="108.0" prefWidth="97.0" styleClass="auth" text="%runtime.scenes.login.login.goAuth" textFill="WHITE">
-                <font>
-                    <Font name="System Bold" size="32.0" />
-                </font>
-            </Button>
-            <Hyperlink id="forgotPass" alignment="CENTER_RIGHT" focusTraversable="false" layoutX="208.0" layoutY="390.0" prefHeight="22.0" prefWidth="182.0" text="%runtime.scenes.login.login.forgotPass" textAlignment="CENTER">
-                <font>
-                    <Font size="11.0" />
-                </font>
-            </Hyperlink>
-            <CheckBox id="savePassword" layoutX="79.0" layoutY="425.0" prefHeight="20.0" prefWidth="205.0" text="%runtime.scenes.login.login.savePassword" textFill="#dadada">
-                <padding>
-                    <Insets left="5.0" />
-                </padding>
-            </CheckBox>
-            <CheckBox id="autoenter" layoutX="79.0" layoutY="449.0" prefHeight="20.0" prefWidth="205.0" text="%runtime.scenes.login.login.autoenter" textFill="#dadada">
-                <padding>
-                    <Insets left="5.0" />
-                </padding>
-            </CheckBox>
-            <Text id="textLogin" fill="WHITE" layoutX="474.0" layoutY="34.0" text="%runtime.scenes.login.login.textLogin" wrappingWidth="295.9999973028898" />
-            <Hyperlink id="createAccount" focusTraversable="false" layoutX="469.0" layoutY="31.0" prefHeight="28.0" prefWidth="296.0" text="%runtime.scenes.login.login.createAccount">
-                <font>
-                    <Font size="11.0" />
-                </font>
-            </Hyperlink>
-            <ScrollPane id="scroll-pane" layoutX="470.0" layoutY="71.0" prefHeight="431.0" prefWidth="431.0">
-                <opaqueInsets>
-                    <Insets />
-                </opaqueInsets>
-                <padding>
-                    <Insets bottom="5.0" top="5.0" />
-                </padding>
-                <Text id="newsArea" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="410.13671875" />
-            </ScrollPane>
-            <Button id="hide" alignment="CENTER" contentDisplay="CENTER" layoutX="794.0" layoutY="16.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#c6c6c6">
-                <graphic>
-                    <SVGPath id="iconsLogin" content="M5 5V27H27V5H5ZM7 7H25V25H7V7ZM9 20V22H23V20H9Z&#10;" />
-                </graphic>
-                <tooltip>
-                    <Tooltip text="%runtime.scenes.login.login.hideTooltip" />
-                </tooltip>
-            </Button>
-            <Button id="close" alignment="CENTER" contentDisplay="CENTER" layoutX="838.0" layoutY="16.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
-                <graphic>
-                    <SVGPath id="iconsLogin" content="M5 5V27H27V5H5ZM7 7H25V25H7V7ZM11.6875 10.3125L10.2812 11.7188L14.5625 16L10.2188 20.3438L11.625 21.75L15.9688 17.4062L20.2812 21.7188L21.6875 20.3125L17.375 16L21.625 11.75L20.2188 10.3438L15.9688 14.5938L11.6875 10.3125Z&#10;" />
-                </graphic>
-                <tooltip>
-                    <Tooltip text="%runtime.scenes.login.login.closeTooltip" />
-                </tooltip>
-            </Button>
-        </Pane>
-    </Pane>
-    <Pane id="blur" layoutY="1.0" opacity="0.0" prefHeight="500.0" prefWidth="900.0" visible="false" />
-</Pane>
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="354.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="loginPane" prefHeight="630.0" prefWidth="350.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="2.0">
+          <Pane fx:id="layout" prefHeight="630.0" prefWidth="350.0">
+              <Pane fx:id="authPane" prefHeight="630.0" prefWidth="350.0">
+                  <TextField id="login" layoutX="34.0" layoutY="410.0" prefHeight="45.0" prefWidth="280.0" promptText="%runtime.scenes.login.login.login">
+                                                                      
+                      <font>
+                          <Font size="16.0" />
+                      </font>
+                  </TextField>
+                  <PasswordField id="password" layoutX="35.0" layoutY="470.0" prefHeight="45.0" prefWidth="218.0" promptText="%runtime.scenes.login.login.password">
+                                                                             
+                      <font>
+                          <Font size="16.0" />
+                      </font>
+                  </PasswordField>
+                  <ComboBox id="combologin" fx:id="authOptions" layoutX="78.0" layoutY="345.0" prefWidth="150.0" promptText="%runtime.scenes.login.login.combologin" visible="false">
+                                                                                          
+                      <styleClass>
+                          <String fx:value="combologin" />
+                          <String fx:value="combologin-popup" />
+                      </styleClass>
+                  </ComboBox>
+                                                                                                            
+                  <Button id="goAuth" contentDisplay="CENTER" defaultButton="true" layoutX="249.0" layoutY="410.0" prefHeight="108.0" prefWidth="97.0" styleClass="auth" text="%runtime.scenes.login.login.goAuth" textFill="WHITE">
+                                     
+                      <font>
+                          <Font name="System Bold" size="32.0" />
+                      </font>
+                      <graphic>
+                          <SVGPath content="M101 50.1588L101 101L5.71095e-06 50.1588L101 0L101 50.1588Z" fill="#f9a825" />
+                      </graphic>
+                  </Button>
+                  <Hyperlink id="forgotPass" alignment="CENTER_RIGHT" focusTraversable="false" layoutX="202.0" layoutY="524.0" text="%runtime.scenes.login.login.forgotPass" textAlignment="CENTER">
+                                                                                            
+                      <font>
+                          <Font size="11.0" />
+                      </font>
+                  </Hyperlink>
+                  <CheckBox id="savePassword" layoutX="23.0" layoutY="546.0" text="%runtime.scenes.login.login.savePassword" textFill="#dadada">
+                                         
+                      <padding>
+                          <Insets left="5.0" />
+                      </padding>
+                  </CheckBox>
+                  <CheckBox id="autoenter" layoutX="23.0" layoutY="582.0" text="%runtime.scenes.login.login.autoenter" textFill="#dadada">
+                                         
+                      <padding>
+                          <Insets left="5.0" />
+                      </padding>
+                  </CheckBox>
+                  <Hyperlink id="createAccount" focusTraversable="false" layoutX="35.0" layoutY="524.0" text="%runtime.scenes.login.login.createAccount">
+                                                                        
+                      <font>
+                          <Font size="11.0" />
+                      </font>
+                  </Hyperlink>
+                  <Button id="hide" alignment="CENTER" contentDisplay="CENTER" layoutX="255.0" layoutY="14.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
+                                                                                                 
+                      <graphic>
+                                            
+                                                  <SVGPath id="iconsLogin" content="M3.37008 0C1.79893 0 0.512939 1.28599 0.512939 2.85714V21.1429C0.512939 22.714 1.79893 24 3.37008 24H21.6558C23.2269 24 24.5129 22.714 24.5129 21.1429V2.85714C24.5129 1.28599 23.2269 0 21.6558 0H3.37008ZM3.37008 1.14286H21.6558C22.6092 1.14286 23.3701 1.90372 23.3701 2.85714V21.1429C23.3701 22.0963 22.6092 22.8571 21.6558 22.8571H3.37008C2.41666 22.8571 1.6558 22.0963 1.6558 21.1429V2.85714C1.6558 1.90372 2.41666 1.14286 3.37008 1.14286ZM6.22723 16C5.60262 16 5.08437 16.5182 5.08437 17.1429V18.2857C5.08437 18.9103 5.60262 19.4286 6.22723 19.4286H18.7987C19.4233 19.4286 19.9415 18.9103 19.9415 18.2857V17.1429C19.9415 16.5182 19.4233 16 18.7987 16H6.22723ZM6.22723 17.1429H18.7987V18.2857H6.22723V17.1429Z" />
+                      </graphic>
+                      <tooltip>
+                          <Tooltip text="%runtime.scenes.login.login.hideTooltip" />
+                      </tooltip>
+                  </Button>
+                  <Button id="close" alignment="CENTER" contentDisplay="CENTER" layoutX="299.0" layoutY="14.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
+                                                                                                 
+                      <graphic>
+                                            
+                          <SVGPath id="iconsLogin" content="M3.37008 0C1.79893 0 0.512939 1.28599 0.512939 2.85714V21.1429C0.512939 22.714 1.79893 24 3.37008 24H21.6558C23.2269 24 24.5129 22.714 24.5129 21.1429V2.85714C24.5129 1.28599 23.2269 0 21.6558 0H3.37008ZM3.37008 1.14286H21.6558C22.6092 1.14286 23.3701 1.90372 23.3701 2.85714V21.1429C23.3701 22.0963 22.6092 22.8571 21.6558 22.8571H3.37008C2.41666 22.8571 1.6558 22.0963 1.6558 21.1429V2.85714C1.6558 1.90372 2.41666 1.14286 3.37008 1.14286ZM7.7741 6.45312L6.96606 7.26116L11.7049 12L6.96606 16.7388L7.7741 17.5469L12.5129 12.808L17.2518 17.5469L18.0598 16.7388L13.321 12L18.0598 7.26116L17.2518 6.45312L12.5129 11.192L7.7741 6.45312Z" />
+                      </graphic>
+                      <tooltip>
+                          <Tooltip text="%runtime.scenes.login.login.closeTooltip" />
+                      </tooltip>
+                  </Button>
+                  <Button id="aboutAct" alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#c6c6c6">
+                                                                                                 
+                      <graphic>
+                            
+                          <SVGPath content="M1.6 0.153846C1.6 0.238462 1.4586 0.307692 1.2858 0.307692C0.8816 0.307692 0.4 0.678154 0.4 0.989077C0.4 1.122 0.31 1.23077 0.2 1.23077C0.0688 1.23077 0 4.61538 0 11.0769C0 17.5385 0.0688 20.9231 0.2 20.9231C0.31 20.9231 0.4 21.0318 0.4 21.1648C0.4 21.4757 0.8816 21.8462 1.2858 21.8462C1.4586 21.8462 1.6 21.9154 1.6 22C1.6 22.0971 2.971 22.1538 5.313 22.1538H9.026L10 22.9231C10.5358 23.3462 11.1148 23.6923 11.287 23.6923C11.4592 23.6923 11.6 23.7615 11.6 23.8462C11.6 23.9308 11.78 24 12 24C12.22 24 12.4 23.9308 12.4 23.8462C12.4 23.7615 12.5408 23.6923 12.713 23.6923C12.8852 23.6923 13.4642 23.3462 14 22.9231L14.974 22.1538H18.687C21.029 22.1538 22.4 22.0971 22.4 22C22.4 21.9154 22.5414 21.8462 22.7142 21.8462C23.1184 21.8462 23.6 21.4757 23.6 21.1648C23.6 21.0318 23.69 20.9231 23.8 20.9231C23.9312 20.9231 24 17.5385 24 11.0769C24 4.61538 23.9312 1.23077 23.8 1.23077C23.69 1.23077 23.6 1.122 23.6 0.989077C23.6 0.678154 23.1184 0.307692 22.7142 0.307692C22.5414 0.307692 22.4 0.238462 22.4 0.153846C22.4 0.0532308 18.8 0 12 0C5.2 0 1.6 0.0532308 1.6 0.153846ZM13.3142 5.45062C13.4878 5.584 13.6 5.98092 13.6 6.46154C13.6 7.47508 13.3176 7.69231 12 7.69231C11.3752 7.69231 10.8592 7.606 10.6858 7.47246C10.3284 7.19769 10.303 5.764 10.65 5.46092C10.9886 5.16508 12.9332 5.15738 13.3142 5.45062ZM13.2 13.3846V16.6154H12H10.8V13.3846V10.1538H12H13.2V13.3846Z" fill="#ff4f2d" />
+                                            
+                      </graphic>
+                      <tooltip>
+                          <Tooltip text="%runtime.scenes.login.login.aboutTooltip" />
+                      </tooltip>
+                  </Button>
+              </Pane>
+          </Pane>
+          <Pane id="about" prefHeight="630.0" prefWidth="350.0" visible="false">
+              <children>
+                  <Pane layoutX="7.0" layoutY="233.0" prefHeight="390.0" prefWidth="337.0">
+                      <children>
+                          <Button id="closeAbout" alignment="CENTER" contentDisplay="CENTER" layoutX="287.0" layoutY="10.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
+                                                                                                         
+                              <graphic>
+                                                    
+                                  <SVGPath id="iconsLogin" content="M3.37008 0C1.79893 0 0.512939 1.28599 0.512939 2.85714V21.1429C0.512939 22.714 1.79893 24 3.37008 24H21.6558C23.2269 24 24.5129 22.714 24.5129 21.1429V2.85714C24.5129 1.28599 23.2269 0 21.6558 0H3.37008ZM3.37008 1.14286H21.6558C22.6092 1.14286 23.3701 1.90372 23.3701 2.85714V21.1429C23.3701 22.0963 22.6092 22.8571 21.6558 22.8571H3.37008C2.41666 22.8571 1.6558 22.0963 1.6558 21.1429V2.85714C1.6558 1.90372 2.41666 1.14286 3.37008 1.14286ZM7.7741 6.45312L6.96606 7.26116L11.7049 12L6.96606 16.7388L7.7741 17.5469L12.5129 12.808L17.2518 17.5469L18.0598 16.7388L13.321 12L18.0598 7.26116L17.2518 6.45312L12.5129 11.192L7.7741 6.45312Z" />
+                              </graphic>
+                              <tooltip>
+                                  <Tooltip text="%runtime.scenes.login.login.closeTooltip" />
+                              </tooltip>
+                          </Button>
+                      </children>
+                  </Pane>
+              </children>
+          </Pane>
+          <ImageView id="logo" fitHeight="64.0" fitWidth="200.0" layoutX="70.0" layoutY="95.0">
+              <image>
+                  <Image url="@../../images/logo.png" />
+              </image>
+          </ImageView>
+      </Pane>
+   </children>
+   <stylesheets>
+      <URL value="@login.css" />
+      <URL value="@../../global.css" />
+   </stylesheets>
+</AnchorPane>

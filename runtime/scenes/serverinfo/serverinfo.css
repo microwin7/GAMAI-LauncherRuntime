@@ -1,0 +1,119 @@
+/*-- DrLeonardo Design for GravitLauncher --*/
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../../fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: "TTNorms Bold";
+    src: url("../../fonts/TTNorms-Bold.ttf");
+}
+
+#serverPane {
+    -fx-background-color: transparent;
+}
+
+#layout {
+    -fx-background-color: transparent;
+    -fx-background-size: cover;
+    -fx-background-image: url("../../images/info_background.png");
+}
+
+#serverlist {
+    -fx-background-color: transparent;
+}
+
+#serverlist > .viewport {
+    -fx-background-color: transparent;
+}
+
+#serverdesc {
+    -fx-background-color: transparent;
+}
+
+#serverdesc > .viewport {
+    -fx-background-color: transparent;
+}
+
+#serverinfo {
+    -fx-background-color: transparent;
+}
+
+#serverinfo > .viewport {
+    -fx-background-color: transparent;
+}
+
+#servercontainer {
+    -fx-background-color: transparent;
+}
+
+.serverentrance {
+    -fx-background-color: transparent;
+}
+
+#serverMenu {
+    -fx-background-color: transparent;
+}
+
+#nickname {
+    -fx-font-size: 13pt;
+    -fx-text-fill: #323232;
+}
+
+#heading {
+    -fx-font-family: "TTNorms Bold";
+    -fx-font-weight: bold;
+    -fx-font-size: 16pt;
+    -fx-fill: #2F2F2F;
+}
+
+#headingOnline {
+    -fx-font-size: 16pt;
+    -fx-fill: #323232;
+}
+
+
+#servertext {
+    -fx-font-size: 14;
+    -fx-text-fill: #2F2F2F;
+    -fx-font-family: Roboto;
+}
+
+#clientLaunch {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+
+#goToServersList {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+
+#clientSettings {
+    -fx-background-color: transparent;
+    -fx-padding: 0 0 0 0;
+}
+
+#headingOnline {
+    -fx-fill: #2F2F2F;
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-font-family: Roboto;
+}
+
+#serverTitle {
+    -fx-font-family: "TTNorms Bold";
+    -fx-font-size: 24px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+#genreServer {
+    -fx-text-fill: #E7E7E7;
+    -fx-font-family: "TTNorms Bold";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/*-- DrLeonardo Design for GravitLauncher --*/

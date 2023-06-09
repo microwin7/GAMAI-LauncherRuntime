@@ -1,36 +1,50 @@
 /*-- DrLeonardo Design for GravitLauncher --*/
 
-#optionsBackground {
-    -fx-background-color: transparent;
-    -fx-background-size: cover;
-    -fx-background-image: url('../../images/servermenu.png');
+@font-face {
+    font-family: Roboto;
+    src: url("../../fonts/Roboto.ttf");
+}
+
+#header {
+    -fx-font-family: Roboto;
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+    -fx-text-fill: #2F2F2F;
+    -fx-fill: #2F2F2F;
 }
 
 #optionsPane {
     -fx-background-color: transparent;
+    -fx-background-size: cover;
+    -fx-background-image: url('../../images/main_background.png');
+}
+
+#optionsPane #apply {
+    -fx-background-color: transparent;
+    -fx-background-image: url("../../images/save.png");
 }
 
 .optionsContainer {
     -fx-background-color: transparent;
 }
 
-#optionsPane>#modlist {
+#optionsPane > #modlist {
     -fx-background-color: transparent;
 }
 
-#optionsPane>#modlist>.viewport {
+#optionsPane > #modlist > .viewport {
     -fx-background-color: transparent;
 }
 
 .optionsDescription {
     -fx-fill: #323232;
     -fx-font-size: 12px;
-    -fx-padding : 0 0 0 10px;
+    -fx-padding: 0 0 0 10px;
 }
 
 .optionsCheckbox {
     -fx-label-padding: 0 0 0 5px;
-    -fx-padding : 3 0 0 0px;
+    -fx-padding: 3 0 0 0px;
 }
 
 #headingOptional {
@@ -38,4 +52,5 @@
     -fx-font-weight: bold;
     -fx-font-size: 14pt;
 }
+
 /*-- DrLeonardo Design for GravitLauncher --*/

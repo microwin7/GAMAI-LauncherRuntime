@@ -2,108 +2,134 @@
 
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
-<?import javafx.geometry.Point3D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.SVGPath?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <!-- DrLeonardo Design for GravitLauncher-->
 
-<Pane fx:id="serverPane" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-    <stylesheets>
-        <URL value="@../../global.css" />
-        <URL value="@servermenu.css" />
-    </stylesheets>
-    <Pane fx:id="layout" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1">
-        <Pane fx:id="serverMenu" prefHeight="500.0" prefWidth="900.0">
-            <ImageView id="serverImage" layoutX="282.0" fitHeight="500.0" fitWidth="620.0" smooth="false">
-                <Image url="@../../images/servers/imageExample.png" />
-            </ImageView>
-            <ScrollPane fx:id="serverlist" hbarPolicy="NEVER" layoutX="1.0" layoutY="1.0" prefHeight="500.0" prefWidth="288.0">
-                <FlowPane prefHeight="497.0" prefWidth="287.0" prefWrapLength="0.0" rowValignment="TOP" />
-            </ScrollPane>
-            <ImageView id="avatar" fitHeight="48.0" fitWidth="48.0" layoutX="317.0" layoutY="30.0" smooth="false">
-                <Image url="@../../images/icons/default.png" />
-            </ImageView>
-         <Label id="nickname" layoutX="371.0" layoutY="38.0" prefHeight="34.0" prefWidth="282.0" text="PLAYER123">
-            <padding>
-               <Insets left="10.0" />
-            </padding>
-         </Label>
-            <Button id="settings" alignment="CENTER" contentDisplay="CENTER" layoutX="744.0" layoutY="35.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
-                <graphic>
-                    <SVGPath id="icons" content="&#10;M15 5C13.707 5 12.6055 5.84375 12.1875 7H4V9H12.1875C12.6055 10.1562 13.707 11 15 11C16.293 11 17.3945 10.1562 17.8125 9H28V7H17.8125C17.3945 5.84375 16.293 5 15 5ZM15 7C15.5625 7 16 7.4375 16 8C16 8.5625 15.5625 9 15 9C14.4375 9 14 8.5625 14 8C14 7.4375 14.4375 7 15 7ZM22 13C20.707 13 19.6055 13.8438 19.1875 15H4V17H19.1875C19.6055 18.1562 20.707 19 22 19C23.293 19 24.3945 18.1562 24.8125 17H28V15H24.8125C24.3945 13.8438 23.293 13 22 13ZM22 15C22.5625 15 23 15.4375 23 16C23 16.5625 22.5625 17 22 17C21.4375 17 21 16.5625 21 16C21 15.4375 21.4375 15 22 15ZM11 21C9.70703 21 8.60547 21.8438 8.1875 23H4V25H8.1875C8.60547 26.1562 9.70703 27 11 27C12.293 27 13.3945 26.1562 13.8125 25H28V23H13.8125C13.3945 21.8438 12.293 21 11 21ZM11 23C11.5625 23 12 23.4375 12 24C12 24.5625 11.5625 25 11 25C10.4375 25 10 24.5625 10 24C10 23.4375 10.4375 23 11 23Z&#10;" />
-                </graphic>
-                <tooltip>
-                    <Tooltip id="settingsTooltip" text="%runtime.scenes.servermenu.servermenu.settingsTooltip" />
-                </tooltip>
-            </Button>
-            <Button id="exit" alignment="CENTER" contentDisplay="CENTER" layoutX="701.0" layoutY="35.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
-                <graphic>
-                    <SVGPath id="icons" content="M6 4V28H26V20L24 22V26H8V6H24V10L26 12V4H6ZM22.4062 11L21 12.4062L23.5625 15H13.9062V17H23.5625L21 19.5938L22.4062 21L26.7188 16.7188L27.4062 16L26.7188 15.2812L22.4062 11Z&#10;" strokeMiterLimit="11.0" />
-                </graphic>
-                <tooltip>
-                    <Tooltip id="logoutTooltip" text="%runtime.scenes.servermenu.servermenu.logoutTooltip" />
-                </tooltip>
-            </Button>
-            <Button id="hide" alignment="CENTER" contentDisplay="CENTER" layoutX="789.0" layoutY="35.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#c6c6c6">
-                <graphic>
-                    <SVGPath id="icons" content="M5 5V27H27V5H5ZM7 7H25V25H7V7ZM9 20V22H23V20H9Z&#10;" />
-                </graphic>
-                <tooltip>
-                    <Tooltip id="hideTooltip" text="%runtime.scenes.servermenu.servermenu.hideTooltip" />
-                </tooltip>
-            </Button>
-            <Button id="close" alignment="CENTER" contentDisplay="CENTER" layoutX="833.0" layoutY="35.0" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
-                <graphic>
-                    <SVGPath id="icons" content="M5 5V27H27V5H5ZM7 7H25V25H7V7ZM11.6875 10.3125L10.2812 11.7188L14.5625 16L10.2188 20.3438L11.625 21.75L15.9688 17.4062L20.2812 21.7188L21.6875 20.3125L17.375 16L21.625 11.75L20.2188 10.3438L15.9688 14.5938L11.6875 10.3125Z&#10;" />
-                </graphic>
-                <tooltip>
-                    <Tooltip id="closeTooltip" text="%runtime.scenes.servermenu.servermenu.closeTooltip" />
-                </tooltip>
-            </Button>
-            <Text id="heading" fontSmoothingType="LCD" layoutX="15.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="%runtime.scenes.servermenu.servermenu.heading" wrappingWidth="470.13671875" x="299.0" />
-            <Text id="headingOnline" fontSmoothingType="LCD" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="24 / 50" textAlignment="RIGHT" wrappingWidth="172.13671067357063" x="705.0" />
-            <ScrollPane fx:id="serverInfo" hbarPolicy="NEVER" layoutX="311.0" layoutY="139.0" prefHeight="361.0" prefWidth="591.0">
-                <FlowPane prefHeight="354.0" prefWidth="546.0" prefWrapLength="0.0" rowValignment="TOP">
-                    <opaqueInsets>
-                        <Insets />
-                    </opaqueInsets>
-                    <padding>
-                        <Insets bottom="10.0" left="10.0" top="10.0" />
-                    </padding>
-                    <Text id="servertext" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="555.13671875">
-                        <FlowPane.margin>
-                            <Insets bottom="10.0" right="10.0" />
-                        </FlowPane.margin>
-                    </Text>
-                </FlowPane>
-            </ScrollPane>
-            <Button id="clientLaunch" alignment="BASELINE_LEFT" layoutX="606.0" layoutY="412.0" prefHeight="50.0" prefWidth="210.0" text="%runtime.scenes.servermenu.servermenu.clientLaunch" textFill="WHITE">
-                <font>
-                    <Font name="System Bold" size="22.0" />
-                </font>
-            </Button>
-            <Button id="clientSettings" alignment="BASELINE_CENTER" contentDisplay="CENTER" layoutX="816.0" layoutY="412.0" prefHeight="50.0" prefWidth="50.0" textFill="WHITE">
-                <font>
-                    <Font name="System Bold" size="30.0" />
-                </font>
-                <graphic>
-                    <SVGPath content="M4 4V28H14.8379C14.5599 27.364 14.3422 26.696 14.2012 26H6V12H26V14.2012C26.696 14.3422 27.364 14.5599 28 14.8379V4H4ZM6 6H26V10H6V6ZM7 7V9H9V7H7ZM10 7V9H12V7H10ZM13 7V9H15V7H13ZM23 16V18.1992C22.1 18.2992 21.2 18.6992 20.5 19.1992L19 17.6992L17.5996 19.0996L19.0996 20.5C18.5996 21.3 18.2996 22.1 18.0996 23H16V25H18.0996C18.1996 25.9 18.5996 26.8 19.0996 27.5L17.5996 29L19 30.4004L20.5 28.9004C21.3 29.4004 22.1 29.7004 23 29.9004V32H25V29.9004C25.9 29.8004 26.8 29.4004 27.5 28.9004L29 30.4004L30.4004 29L28.9004 27.5C29.4004 26.7 29.7004 25.9 29.9004 25H32V23H29.9004C29.8004 22.1 29.4004 21.2 28.9004 20.5L30.4004 19L29 17.5996L27.5 19.0996C26.7 18.5996 25.9 18.2996 25 18.0996V16H23ZM24 20C26.2 20 28 21.8 28 24C28 26.2 26.2 28 24 28C21.8 28 20 26.2 20 24C20 21.8 21.8 20 24 20ZM24 22C22.9 22 22 22.9 22 24C22 25.1 22.9 26 24 26C25.1 26 26 25.1 26 24C26 22.9 25.1 22 24 22Z&#10;" fill="WHITE">
-                        <rotationAxis>
-                            <Point3D />
-                        </rotationAxis>
-                    </SVGPath>
-                </graphic>
-            </Button>
-        </Pane>
-    </Pane>
-</Pane>
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="1134.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+       <URL value="@../../global.css" />
+       <URL value="@servermenu.css" />
+   </stylesheets>
+   <children>
+      <Pane fx:id="serverPane" prefHeight="630.0" prefWidth="1130.0" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="2.0">
+          <Pane fx:id="layout" prefHeight="630.0" prefWidth="1130.0" xmlns="http://javafx.com/javafx/8.0.201" xmlns:fx="http://javafx.com/fxml/1">
+              <Pane fx:id="serverMenu" prefHeight="630.0" prefWidth="1130.0">
+                  <ImageView id="avatar" fitHeight="40.0" fitWidth="40.0" layoutX="33.0" layoutY="26.0" smooth="false">
+                      <Image url="@../../images/default.png" />
+                  </ImageView>
+                  <Label id="nickname" layoutX="91.0" layoutY="33.0" text="PLAYER123456" />
+                  <Button id="prev" contentDisplay="GRAPHIC_ONLY" layoutX="15.0" layoutY="272.0" mnemonicParsing="false" text="Назад">
+                      <graphic>
+                          <SVGPath content="M4 43.5L22 0.631744L22 86.3683L4 43.5Z" fill="#ff4f2d" />
+                      </graphic>
+                  </Button>
+                  <Button id="next" contentDisplay="GRAPHIC_ONLY" layoutX="1095.0" layoutY="273.0" mnemonicParsing="false" text="Вперед">
+                      <graphic>
+                          <SVGPath content="M22 43.5L3.99999 86.3683L4 0.631744L22 43.5Z" fill="#ff4f2d" />
+                      </graphic>
+                  </Button>
+                  <HBox fx:id="list" layoutX="91.0" layoutY="97.0" spacing="15.0">
+                      <children>
+                          <Button id="firstBtn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="437.0" prefWidth="226.0" styleClass="serverBTN" text="Назад" />
+                          <Button id="secondBtn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="437.0" prefWidth="226.0" styleClass="serverBTN" text="Назад" />
+                          <Button id="thirdBtn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="437.0" prefWidth="226.0" styleClass="serverBTN" text="Назад" />
+                          <Button id="fourthBtn" contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="437.0" prefWidth="226.0" styleClass="serverBTN" text="Назад" />
+                      </children>
+                  </HBox>
+                  <HBox layoutX="882.0" layoutY="30.0" spacing="3.0">
+                      <children>
+                          <Button id="console" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
+                              <graphic>
+                                  <SVGPath id="icons" content="M1.62292 0.5C0.874837 0.5 0.257998 1.20099 0.257998 2.05114V4.76136C0.256123 4.7848 0.256123 4.80611 0.257998 4.82955V23.9545C0.257998 24.255 0.47361 24.5 0.73797 24.5H23.7766C24.041 24.5 24.2566 24.255 24.2566 23.9545V4.86364C24.2566 4.84659 24.2566 4.82955 24.2566 4.8125V2.05114C24.2566 1.20099 23.6398 0.5 22.8917 0.5H1.62292ZM1.62292 1.59091H22.8917C23.1223 1.59091 23.2966 1.78906 23.2966 2.05114V6.5H1.25659L1.21794 2.05114C1.21794 1.78906 1.39231 1.59091 1.62292 1.59091ZM1.25659 7.5H23.2966V23.4091H1.21794L1.25659 7.5ZM7.41258 9.73864C7.23071 9.7706 7.08072 9.91761 7.02635 10.1158C6.97198 10.3161 7.0226 10.5334 7.15759 10.6761L9.66245 13.608L7.0826 16.4545C6.89136 16.6655 6.88948 17.0128 7.0751 17.2301C7.26071 17.4474 7.56632 17.4496 7.75756 17.2386L10.6674 14L11.0124 13.625L10.6824 13.233L7.83255 9.90909C7.74631 9.80469 7.62819 9.74503 7.50257 9.73864C7.47258 9.73438 7.44258 9.73438 7.41258 9.73864ZM11.2074 16.3182C10.943 16.3459 10.748 16.6143 10.7724 16.9148C10.7968 17.2152 11.033 17.4368 11.2974 17.4091H17.537C17.7095 17.4112 17.8707 17.3089 17.9588 17.1385C18.0451 16.968 18.0451 16.7592 17.9588 16.5888C17.8707 16.4183 17.7095 16.3161 17.537 16.3182H11.2974C11.2824 16.3182 11.2674 16.3182 11.2524 16.3182C11.2374 16.3182 11.2224 16.3182 11.2074 16.3182Z" />
+                              </graphic>
+                              <tooltip>
+                                  <Tooltip id="settingsTooltip" text="%runtime.scenes.servermenu.servermenu.consoleTooltip" />
+                              </tooltip>
+                          </Button>
+                          <Button id="settings" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
+                              <graphic>
+                                  <SVGPath id="icons" content="M3.59446 0.00235431C3.57204 0.00642628 3.54962 0.0125335 3.52924 0.0186412C3.28672 0.0736094 3.11552 0.291446 3.12163 0.53982V4.18807H2.07816C1.22014 4.18807 0.512939 4.89452 0.512939 5.75161V6.79397C0.512939 7.65106 1.22014 8.3575 2.07816 8.3575H5.20859C6.06661 8.3575 6.77381 7.65106 6.77381 6.79397V5.75161C6.77381 4.89452 6.06661 4.18807 5.20859 4.18807H4.16511V0.53982C4.17123 0.389167 4.11009 0.244621 4.00207 0.142828C3.89202 0.039 3.74324 -0.0118968 3.59446 0.00235431ZM12.464 0.00235431C12.4416 0.00642628 12.4192 0.0125335 12.3988 0.0186412C12.1563 0.0736094 11.9851 0.291446 11.9912 0.53982V15.1328H10.9477C10.0897 15.1328 9.3825 15.8393 9.3825 16.6964V17.7387C9.3825 18.5958 10.0897 19.3023 10.9477 19.3023H14.0782C14.9362 19.3023 15.6434 18.5958 15.6434 17.7387V16.6964C15.6434 15.8393 14.9362 15.1328 14.0782 15.1328H13.0347V0.53982C13.0408 0.389167 12.9797 0.244621 12.8716 0.142828C12.7616 0.039 12.6128 -0.0118968 12.464 0.00235431ZM21.3336 0.00235431C21.3112 0.00642628 21.2888 0.0125335 21.2684 0.0186412C21.0258 0.0736094 20.8547 0.291446 20.8608 0.53982V5.75161H19.8173C18.9593 5.75161 18.2521 6.45805 18.2521 7.31515V8.3575C18.2521 9.2146 18.9593 9.92104 19.8173 9.92104H22.9477C23.8057 9.92104 24.5129 9.2146 24.5129 8.3575V7.31515C24.5129 6.45805 23.8057 5.75161 22.9477 5.75161H21.9042V0.53982C21.9104 0.389167 21.8492 0.244621 21.7412 0.142828C21.6311 0.039 21.4824 -0.0118968 21.3336 0.00235431ZM2.07816 5.23043H5.20859C5.50411 5.23043 5.73033 5.45641 5.73033 5.75161V6.79397C5.73033 7.08917 5.50411 7.31515 5.20859 7.31515H2.07816C1.78264 7.31515 1.55642 7.08917 1.55642 6.79397V5.75161C1.55642 5.45641 1.78264 5.23043 2.07816 5.23043ZM19.8173 6.79397H22.9477C23.2432 6.79397 23.4695 7.01995 23.4695 7.31515V8.3575C23.4695 8.6527 23.2432 8.87868 22.9477 8.87868H19.8173C19.5218 8.87868 19.2955 8.6527 19.2955 8.3575V7.31515C19.2955 7.01995 19.5218 6.79397 19.8173 6.79397ZM3.12163 8.87868V12.4292C3.11756 12.4618 3.11756 12.4944 3.12163 12.5269V23.4717C3.1196 23.659 3.21742 23.8341 3.38047 23.9298C3.54351 24.0234 3.74324 24.0234 3.90628 23.9298C4.06933 23.8341 4.16715 23.659 4.16511 23.4717V12.5269C4.16919 12.4944 4.16919 12.4618 4.16511 12.4292V8.87868H3.12163ZM20.8608 10.4422V13.9928C20.8567 14.0253 20.8567 14.0579 20.8608 14.0905V23.4717C20.8587 23.659 20.9566 23.8341 21.1196 23.9298C21.2826 24.0234 21.4824 24.0234 21.6454 23.9298C21.8085 23.8341 21.9063 23.659 21.9042 23.4717V14.0905C21.9083 14.0579 21.9083 14.0253 21.9042 13.9928V10.4422H20.8608ZM10.9477 16.1752H14.0782C14.3737 16.1752 14.5999 16.4012 14.5999 16.6964V17.7387C14.5999 18.0339 14.3737 18.2599 14.0782 18.2599H10.9477C10.6522 18.2599 10.426 18.0339 10.426 17.7387V16.6964C10.426 16.4012 10.6522 16.1752 10.9477 16.1752ZM11.9912 19.8234V20.7681C11.9871 20.8007 11.9871 20.8332 11.9912 20.8658V23.4717C11.9892 23.659 12.087 23.8341 12.25 23.9298C12.4131 24.0234 12.6128 24.0234 12.7758 23.9298C12.9389 23.8341 13.0367 23.659 13.0347 23.4717V20.8658C13.0388 20.8332 13.0388 20.8007 13.0347 20.7681V19.8234H11.9912Z" />
+                              </graphic>
+                              <tooltip>
+                                  <Tooltip id="settingsTooltip" text="%runtime.scenes.servermenu.servermenu.settingsTooltip" />
+                              </tooltip>
+                          </Button>
+                          <Button id="exit" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
+                              <graphic>
+                                  <SVGPath id="icons" content="M10.3636 5.45492e-05C10.2914 -0.000967654 10.2196 0.0123857 10.1525 0.0393386C10.0854 0.0662914 10.0244 0.106306 9.97293 0.157057C9.92145 0.207809 9.88058 0.268284 9.85268 0.33497C9.82478 0.401655 9.81041 0.473221 9.81041 0.545507C9.81041 0.617793 9.82478 0.689358 9.85268 0.756043C9.88058 0.822729 9.92145 0.883205 9.97293 0.933956C10.0244 0.984707 10.0854 1.02472 10.1525 1.05167C10.2196 1.07863 10.2914 1.09198 10.3636 1.09096H22.9091V22.909H15.8182C15.7459 22.908 15.6741 22.9214 15.6071 22.9483C15.54 22.9753 15.4789 23.0153 15.4275 23.066C15.376 23.1168 15.3351 23.1773 15.3072 23.244C15.2793 23.3106 15.265 23.3822 15.265 23.4545C15.265 23.5268 15.2793 23.5983 15.3072 23.665C15.3351 23.7317 15.376 23.7922 15.4275 23.8429C15.4789 23.8937 15.54 23.9337 15.6071 23.9607C15.6741 23.9876 15.7459 24.001 15.8182 23.9999H23.4545C23.5992 23.9999 23.7379 23.9425 23.8402 23.8402C23.9425 23.7379 24 23.5992 24 23.4545V0.545507C24 0.400848 23.9425 0.262119 23.8402 0.15983C23.7379 0.0575408 23.5992 6.90129e-05 23.4545 5.45492e-05H10.3636ZM12.2727 2.18186C11.5 2.18186 10.851 2.49127 10.4329 2.96169C10.0147 3.4321 9.81818 4.03792 9.81818 4.6364C9.81818 5.23488 10.0147 5.84069 10.4329 6.3111C10.851 6.78152 11.5 7.09093 12.2727 7.09093C13.0455 7.09093 13.6944 6.78152 14.1126 6.3111C14.5307 5.84069 14.7273 5.23488 14.7273 4.6364C14.7273 4.03792 14.5307 3.4321 14.1126 2.96169C13.6944 2.49127 13.0455 2.18186 12.2727 2.18186ZM12.2727 3.27277C12.7727 3.27277 13.0783 3.44063 13.2965 3.68612C13.5147 3.93161 13.6364 4.28034 13.6364 4.6364C13.6364 4.99246 13.5147 5.34119 13.2965 5.58668C13.0783 5.83217 12.7727 6.00003 12.2727 6.00003C11.7727 6.00003 11.4671 5.83217 11.2489 5.58668C11.0307 5.34119 10.9091 4.99246 10.9091 4.6364C10.9091 4.28034 11.0307 3.93161 11.2489 3.68612C11.4671 3.44063 11.7727 3.27277 12.2727 3.27277ZM19.0856 4.35834C18.9771 4.35837 18.871 4.39076 18.781 4.45137C18.691 4.51198 18.6211 4.59805 18.5803 4.69858C18.5395 4.79911 18.5296 4.90954 18.5518 5.01574C18.5741 5.12194 18.6275 5.21909 18.7053 5.29478L19.956 6.54548H16.3636C16.2914 6.54446 16.2196 6.55781 16.1525 6.58476C16.0854 6.61172 16.0244 6.65173 15.9729 6.70248C15.9215 6.75323 15.8806 6.81371 15.8527 6.88039C15.8248 6.94708 15.8104 7.01865 15.8104 7.09093C15.8104 7.16322 15.8248 7.23478 15.8527 7.30147C15.8806 7.36815 15.9215 7.42863 15.9729 7.47938C16.0244 7.53013 16.0854 7.57015 16.1525 7.5971C16.2196 7.62405 16.2914 7.63741 16.3636 7.63638H19.956L18.7053 8.88709C18.6529 8.93735 18.6111 8.99755 18.5823 9.06416C18.5535 9.13078 18.5383 9.20247 18.5376 9.27504C18.5368 9.34761 18.5506 9.41959 18.578 9.48678C18.6054 9.55397 18.646 9.61501 18.6973 9.66632C18.7486 9.71764 18.8097 9.7582 18.8769 9.78563C18.9441 9.81306 19.016 9.82681 19.0886 9.82607C19.1612 9.82533 19.2329 9.81012 19.2995 9.78133C19.3661 9.75253 19.4263 9.71074 19.4766 9.65839L21.6104 7.52452C21.6771 7.47376 21.7311 7.40834 21.7683 7.33333C21.8056 7.25832 21.8251 7.17574 21.8253 7.09199C21.8255 7.00824 21.8064 6.92556 21.7695 6.85037C21.7326 6.77518 21.6789 6.7095 21.6126 6.6584C21.6115 6.65769 21.6104 6.65698 21.6094 6.65627L19.4766 4.52347C19.4257 4.47122 19.3649 4.42969 19.2978 4.40133C19.2306 4.37296 19.1585 4.35835 19.0856 4.35834ZM5.45455 7.09093C4.86947 7.09093 4.32657 7.40546 4.03551 7.91337C4.035 7.9143 4.03387 7.91463 4.03338 7.9155L2.42685 10.5927L2.42472 10.598C2.05512 11.245 2.11711 12.0991 2.68999 12.6392C3.01084 12.9417 3.42195 13.0909 3.81818 13.0909C4.38641 13.0909 4.93951 12.7913 5.23935 12.2663L5.23295 12.2791L6.39524 10.3636H7.00355L5.68359 13.6396L5.7017 13.6001C5.67264 13.6584 5.65209 13.7193 5.6282 13.7791C5.58019 13.8245 5.54084 13.8783 5.51207 13.9378L4.02699 16.9091H1.63636C0.739107 16.9091 0 17.6482 0 18.5454C0 19.4427 0.739107 20.1818 1.63636 20.1818H5.12322C5.71762 20.1818 6.2675 19.8573 6.55504 19.337L7.34126 17.9147L11.5621 23.4161C11.8363 23.7837 12.2684 23.9999 12.7266 23.9999C13.8292 23.9999 14.5404 22.7436 13.973 21.7979L13.9709 21.7947L10.0536 15.505L11.543 12.2216L13.0249 13.7035C13.3315 14.0093 13.7488 14.1818 14.1829 14.1818H16.3636C17.3505 14.1818 18.1408 13.2755 17.9787 12.2749C17.8443 11.4494 17.0969 10.9091 16.305 10.9091H14.8594L12.6392 8.68894C11.6163 7.66608 10.228 7.09093 8.78161 7.09093H5.45455ZM5.45455 8.18184H8.78161C9.93919 8.18184 11.0493 8.64165 11.8679 9.46024L14.4077 12H16.305C16.5997 12 16.8614 12.2026 16.9016 12.4496C16.961 12.8158 16.7022 13.0909 16.3636 13.0909H14.1829C14.0377 13.0909 13.8986 13.0333 13.7962 12.9311L11.1999 10.3359L8.81889 15.5859L13.0376 22.3593C13.1968 22.6245 13.0356 22.909 12.7266 22.909C12.612 22.909 12.5041 22.8548 12.4357 22.7631L12.4336 22.761L7.76953 16.6811C7.73534 16.6074 7.68511 16.5422 7.62251 16.4904L6.84588 15.4773L6.83949 15.4687C6.51974 15.0852 6.45407 14.5351 6.67756 14.087L6.68715 14.0668L8.61967 9.27274H5.78054L4.29652 11.7188L4.29226 11.7251C4.18955 11.9049 4.00705 12 3.81818 12C3.68641 12 3.5577 11.9575 3.43892 11.8455C3.26779 11.6842 3.23413 11.3802 3.3718 11.1392L4.97834 8.46202L4.98153 8.45669C5.0792 8.28549 5.25739 8.18184 5.45455 8.18184ZM5.77841 15.8448C5.84377 15.9569 5.91629 16.0659 6.00107 16.1676L6.61683 16.9709L5.6005 18.8096C5.50404 18.9842 5.32301 19.0909 5.12322 19.0909H1.63636C1.32817 19.0909 1.09091 18.8536 1.09091 18.5454C1.09091 18.2372 1.32817 18 1.63636 18H4.36364C4.46494 18 4.56424 17.9718 4.65042 17.9185C4.7366 17.8653 4.80625 17.7891 4.85156 17.6985L5.77841 15.8448Z" strokeMiterLimit="11.0" />
+                              </graphic>
+                              <tooltip>
+                                  <Tooltip id="logoutTooltip" text="%runtime.scenes.servermenu.servermenu.logoutTooltip" />
+                              </tooltip>
+                          </Button>
+                          <Button id="hide" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#c6c6c6">
+                              <graphic>
+                                  <SVGPath id="icons" content="M3.37008 0C1.79893 0 0.512939 1.28599 0.512939 2.85714V21.1429C0.512939 22.714 1.79893 24 3.37008 24H21.6558C23.2269 24 24.5129 22.714 24.5129 21.1429V2.85714C24.5129 1.28599 23.2269 0 21.6558 0H3.37008ZM3.37008 1.14286H21.6558C22.6092 1.14286 23.3701 1.90372 23.3701 2.85714V21.1429C23.3701 22.0963 22.6092 22.8571 21.6558 22.8571H3.37008C2.41666 22.8571 1.6558 22.0963 1.6558 21.1429V2.85714C1.6558 1.90372 2.41666 1.14286 3.37008 1.14286ZM6.22723 16C5.60262 16 5.08437 16.5182 5.08437 17.1429V18.2857C5.08437 18.9103 5.60262 19.4286 6.22723 19.4286H18.7987C19.4233 19.4286 19.9415 18.9103 19.9415 18.2857V17.1429C19.9415 16.5182 19.4233 16 18.7987 16H6.22723ZM6.22723 17.1429H18.7987V18.2857H6.22723V17.1429Z" />
+                              </graphic>
+                              <tooltip>
+                                  <Tooltip id="hideTooltip" text="%runtime.scenes.servermenu.servermenu.hideTooltip" />
+                              </tooltip>
+                          </Button>
+                          <Button id="close" alignment="CENTER" contentDisplay="CENTER" prefHeight="40.0" prefWidth="40.0" textAlignment="CENTER" textFill="#464646">
+                              <graphic>
+                                  <SVGPath id="icons" content="M3.37008 0C1.79893 0 0.512939 1.28599 0.512939 2.85714V21.1429C0.512939 22.714 1.79893 24 3.37008 24H21.6558C23.2269 24 24.5129 22.714 24.5129 21.1429V2.85714C24.5129 1.28599 23.2269 0 21.6558 0H3.37008ZM3.37008 1.14286H21.6558C22.6092 1.14286 23.3701 1.90372 23.3701 2.85714V21.1429C23.3701 22.0963 22.6092 22.8571 21.6558 22.8571H3.37008C2.41666 22.8571 1.6558 22.0963 1.6558 21.1429V2.85714C1.6558 1.90372 2.41666 1.14286 3.37008 1.14286ZM7.7741 6.45312L6.96606 7.26116L11.7049 12L6.96606 16.7388L7.7741 17.5469L12.5129 12.808L17.2518 17.5469L18.0598 16.7388L13.321 12L18.0598 7.26116L17.2518 6.45312L12.5129 11.192L7.7741 6.45312Z" />
+                              </graphic>
+                              <tooltip>
+                                  <Tooltip id="closeTooltip" text="%runtime.scenes.servermenu.servermenu.closeTooltip" />
+                              </tooltip>
+                          </Button>
+                      </children>
+                  </HBox>
+               <HBox alignment="CENTER" layoutX="91.0" layoutY="547.0" prefHeight="30.0" prefWidth="949.0">
+                  <children>
+                     <HBox id="dots" alignment="CENTER" prefHeight="30.0" spacing="20.0">
+                        <children>
+                           <Circle fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+                           <Circle fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" styleClass="active" />
+                           <Circle fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" styleClass="active" />
+                           <Circle fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" styleClass="active" />
+                           <Circle fill="DODGERBLUE" radius="10.0" stroke="BLACK" strokeType="INSIDE" />
+                        </children>
+                        <HBox.margin>
+                           <Insets right="5.0" />
+                        </HBox.margin>
+                        <padding>
+                           <Insets left="10.0" right="10.0" />
+                        </padding>
+                     </HBox>
+                  </children>
+               </HBox>
+               <HBox id="links" layoutX="519.0" layoutY="33.0" prefHeight="24.0" prefWidth="92.0" spacing="10.0">
+                  <children>
+                     <Button id="vk" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" text="Button">
+                        <graphic>
+                           <SVGPath content="M12.9657 0.5552C12.9906 0.474667 13.0025 0.4 12.9993 0.333333C12.9912 0.140267 12.8563 0 12.5389 0H11.1208C10.7628 0 10.5976 0.213334 10.5012 0.4272C10.5012 0.4272 9.61716 2.21867 8.5983 3.4C8.26789 3.74187 8.09998 3.73333 7.92123 3.73333C7.82535 3.73333 7.58323 3.6192 7.58323 3.30613V0.5408C7.58323 0.170667 7.48952 0 7.18674 0H4.66856C4.44811 0 4.33328 0.170667 4.33328 0.341867C4.33328 0.6976 4.81969 0.782933 4.87493 1.77973V3.712C4.87493 4.18133 4.79206 4.26667 4.61331 4.26667C4.13124 4.26667 3.18225 2.66667 2.54688 0.5696C2.4093 0.1568 2.27172 0 1.91368 0H0.482077C0.0687909 0 0 0.199467 0 0.4128C0 0.797333 0.324996 2.87627 2.09893 5.26667C3.38537 7 5.08022 8 6.58062 8C7.48952 8 7.58269 7.77227 7.58269 7.41653V5.83147C7.58323 5.40427 7.68235 5.33333 7.9716 5.33333C8.17797 5.33333 8.59884 5.46667 9.41133 6.4C10.3484 7.47627 10.5185 8 11.0558 8H12.4739C12.8032 8 12.9922 7.864 12.9998 7.6C13.0015 7.5328 12.9917 7.4576 12.9695 7.37387C12.8644 7.06667 12.3823 6.31573 11.7811 5.6C11.448 5.20373 11.1192 4.8112 10.9681 4.59787C10.8668 4.45867 10.8283 4.36053 10.8332 4.26667C10.8381 4.168 10.8901 4.07413 10.9681 3.94293C10.954 3.94293 12.787 1.40907 12.9657 0.5552Z" fill="WHITE" />
+                        </graphic>
+                     </Button>
+                     <Button id="yt" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" text="Button">
+                        <graphic>
+                           <SVGPath content="M0 0V11L9 5.5L0 0Z" fill="WHITE" />
+                        </graphic>
+                     </Button>
+                     <Button id="discord" contentDisplay="GRAPHIC_ONLY" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="24.0" prefWidth="24.0" text="Button">
+                        <graphic>
+                           <SVGPath content="M12.1147 1.27552C12.0996 1.25273 12.0867 1.23884 12.0649 1.22272C11.8502 1.06599 10.4939 0.116714 8.91116 0L8.75984 0.30568C10.3179 0.678053 11.0297 1.21716 11.7751 1.87854C10.4911 1.22828 9.21885 0.555781 6.99944 0.555781C4.78003 0.555781 3.50779 1.22828 2.22434 1.87854C2.96975 1.21716 3.82165 0.616917 5.23961 0.30568L5.08828 0C3.43101 0.157842 2.13972 1.07043 1.93347 1.22327C1.91217 1.23939 1.89928 1.25273 1.88471 1.27496C1.69808 1.55785 0.278437 3.83544 0.00044975 8.02492C-0.00347345 8.08772 0.0183845 8.15386 0.0615397 8.20055C1.49351 9.75896 3.51396 9.97071 4.01837 9.99961C4.09347 10.0041 4.16185 9.97015 4.20668 9.91013L4.65169 9.32045C3.77177 9.02032 2.76855 8.48122 1.90544 7.50304C2.93669 8.27002 4.48915 8.8925 7 8.8925C9.51085 8.8925 11.0633 8.27002 12.0946 7.50304C11.2315 8.48122 10.2282 9.02032 9.34832 9.32045L9.79332 9.91013C9.83816 9.9696 9.90654 10.0035 9.98164 9.99961C10.486 9.97071 12.5065 9.7584 13.9385 8.20055C13.9811 8.15386 14.0035 8.08772 13.9996 8.02492C13.721 3.83878 12.3025 1.56063 12.1147 1.27552ZM5.03784 7.22515C4.42134 7.22515 3.91693 6.60268 3.91693 5.8357C3.91693 5.06872 4.42134 4.44625 5.03784 4.44625C5.65435 4.44625 6.15876 5.06872 6.15876 5.8357C6.15876 6.60268 5.65435 7.22515 5.03784 7.22515ZM8.96104 7.22515C8.34454 7.22515 7.84013 6.60268 7.84013 5.8357C7.84013 5.06872 8.34454 4.44625 8.96104 4.44625C9.57755 4.44625 10.082 5.06872 10.082 5.8357C10.082 6.60268 9.57755 7.22515 8.96104 7.22515Z" fill="WHITE" />
+                        </graphic>
+                     </Button>
+                  </children>
+               </HBox>
+              </Pane>
+          </Pane>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,23 +1,35 @@
 /*-- DrLeonardo Design for GravitLauncher --*/
 
+@font-face {
+    font-family: Roboto;
+    src: url("../../fonts/Roboto.ttf");
+}
+
 #overlay {
     -fx-background-color: transparent;
     -fx-background-size: cover;
-    -fx-background-image: url('../../images/update.png');
+    -fx-background-image: url('../../images/main_background.png');
 }
 
+#header,
 #headingUpdate {
-    -fx-fill: #323232;
+    -fx-font-family: Roboto;
     -fx-font-weight: bold;
-    -fx-font-size: 14pt;
+    -fx-font-size: 22;
+    -fx-text-fill: #2F2F2F;
+    -fx-fill: #2F2F2F;
+}
+
+SVGPath {
+    -fx-fill: #D45F10;
 }
 
 #outputUpdate {
-    -fx-background-radius: 0;
-    -fx-font-family: monospace;
-    -fx-font-weight: 400;
-    -fx-fill: #323232;
-    -fx-font-size: 12pt;
+    -fx-padding: 0 0 0 0;
+    -fx-font-family: Roboto;
+    -fx-font-weight: normal;
+    -fx-text-fill: #959595;
+    -fx-font-size: 18;
 }
 
 #description {
@@ -45,7 +57,7 @@
     -fx-background-color: transparent;
 }
 
-.progress-bar>.bar {
+.progress-bar > .bar {
     -fx-background-image: url("../../images/icons/update.png");
     -fx-background-color: transparent;
     -fx-background-insets: 0;
@@ -53,7 +65,7 @@
     -fx-padding: 0;
 }
 
-.progress-bar>.track {
+.progress-bar > .track {
     -fx-background-color: transparent;
     -fx-background-insets: 0;
     -fx-background-radius: 3px;
@@ -80,8 +92,10 @@
 #volume,
 #phases,
 #file {
-    -fx-text-fill: #323232;
-    -fx-font-size: 14pt;
+    -fx-font-family: Roboto;
+    -fx-font-weight: bold;
+    -fx-text-fill: #D45F10;
+    -fx-font-size: 15;
 }
 
 

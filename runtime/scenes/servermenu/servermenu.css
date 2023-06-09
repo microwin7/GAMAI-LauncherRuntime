@@ -1,95 +1,81 @@
 /*-- DrLeonardo Design for GravitLauncher --*/
+@font-face {
+    font-family: "Roboto Bold";
+    src: url("../../fonts/RobotoBolt.ttf");
+}
+
+@font-face {
+    font-family: "Quantify";
+    src: url("../../fonts/Quantify.ttf");
+}
+@font-face {
+    font-family: "Audiowide";
+    src: url("../../fonts/AudiowideRegular.ttf");
+}
+
+#serverPane {
+    -fx-background-color: transparent;
+}
+
+#avatar {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+}
 
 #layout {
     -fx-background-color: transparent;
     -fx-background-size: cover;
-    -fx-background-image: url('../../images/servermenu.png');
+    -fx-background-image: url('../../images/main_background.png');
 }
 
-#serverlist {
-    -fx-background-color: transparent;
-}
-
-#serverlist>.viewport {
-    -fx-background-color: transparent;
-}
-
-#serverdesc {
-    -fx-background-color: transparent;
-}
-
-#serverdesc>.viewport {
-    -fx-background-color: transparent;
-}
-
-#serverinfo {
-    -fx-background-color: transparent;
-}
-
-#serverinfo>.viewport {
-    -fx-background-color: transparent;
-}
-
-#servercontainer {
-    -fx-background-color: transparent;
-}
-
-.serverentrance {
-    -fx-background-color: transparent;
-}
-
-#serverMenu {
+.serverBTN {
+    -fx-padding: 0 0 0 0;
     -fx-background-color: transparent;
 }
 
 #nickname {
-    -fx-font-size: 13pt;
-    -fx-text-fill: #323232;
+    -fx-font-family: "Audiowide";
+    -fx-font-weight: bold;
+    -fx-font-size: 22;
+    -fx-text-fill: #2F2F2F;
 }
 
-#heading {
-    -fx-font-size: 16pt;
-    -fx-fill: #323232;
-}
-#headingOnline {
-    -fx-font-size: 16pt;
-    -fx-fill: #323232;
-}
-
-
-#servertext {
-    -fx-font-size: 10pt;
-    -fx-text-fill: #333333;
-}
-
-#avatar {
-    -fx-background-position: center;
+#prev,
+#next {
+    -fx-padding: 0 0 0 0;
     -fx-background-color: transparent;
-    -fx-font-smoothing-type: lcd;
-    -fx-background-image: url('../../images/icons/default.png');
 }
 
-#clientLaunch {
-    -fx-background-radius: 0;
-    -fx-background-color: #7C4DFF;
-    -fx-background-size: cover;
-    -fx-text-fill: #fff;
+
+#dots {
+    -fx-background-color: #F6F6F6;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #BCBCBC;
+    -fx-border-width: 1;
+}
+
+#dots Circle {
+    -fx-cursor: hand;
+    -fx-stroke: transparent;
+    -fx-fill: #FFFFFF;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 4, 0, 0, 0);
+}
+
+#dots Circle.active {
+    -fx-fill: #E15B28;
+}
+
+#links Button {
+    -fx-cursor: hand;
+    -fx-background-color: #C83A2C;
     -fx-background-insets: 0;
+    -fx-border-color: #2F2F2F;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
 }
 
-#clientSettings {
-    -fx-background-radius: 0;
-    -fx-background-color: #7C4DFF;
-    -fx-background-size: cover;
-    -fx-font-size: 13pt;
-    -fx-background-insets: 0;
+#discord {
+    -fx-background-color: #8C9EFF;
 }
-
-#clientLaunch:pressed,
-#clientLaunch:hover,
-#clientSettings:hover,
-#clientSettings:pressed {
-    -fx-background-color: #6B36FF;
-}
-
 /*-- DrLeonardo Design for GravitLauncher --*/
