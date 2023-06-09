@@ -1,0 +1,184 @@
+@font-face {
+    font-family: "Quantify";
+    src: url('../../fonts/Quantify.ttf');
+}
+
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/Roboto.ttf");
+}
+
+@font-face {
+    font-family: "TTNorms Bold";
+    src: url("../fonts/TTNorms-Bold.ttf");
+}
+@font-face {
+    font-family: "Audiowide";
+    src: url("../fonts/AudiowideRegular.ttf");
+}
+
+#dialogBackground {
+    -fx-background-color: transparent;
+}
+
+#notificationPane {
+    -fx-background-color: #fff;
+}
+
+#serverButtonSelected,
+#serverButtonPressed {
+    -fx-background-color: rgba(243, 243, 243, 0.1);
+}
+
+.serverButtons {
+    -fx-background-color: rgba(26, 26, 26, 0.04);
+    -fx-background-radius: 10;
+}
+
+.serverButtonsActive {
+    -fx-background-color: rgba(5, 5, 5, 0.1);
+}
+
+/* #backcolor { */
+    /* -fx-background-color: rgba(223, 106, 41, 0.8); */
+    /* -fx-background-radius: 12; */
+/* } */
+
+#online {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 20pt;
+    -fx-font-weight: bold;
+    -fx-font-family: "Quantify";
+}
+
+#max {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 12pt;
+    -fx-font-weight: bold;
+    -fx-font-family: "Quantify";
+}
+
+#serverTitle {
+    -fx-font-family: "Audiowide";
+    -fx-font-size: 24px;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+}
+
+#genreServer {
+    -fx-text-fill: #E7E7E7;
+    -fx-font-family: "TTNorms Bold";
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+/* Statistics cell */
+
+#statCell {
+
+}
+
+#statPath {
+
+}
+
+#statValue {
+    -fx-text-fill: #2F2F2F;
+    -fx-font-family: "TTNorms Bold";
+    -fx-font-weight: bold;
+    -fx-font-size: 12;
+}
+
+/* Dialogs */
+#headingDialog {
+    -fx-fill: #323232;
+    -fx-font-weight: bold;
+    -fx-font-size: 14pt;
+}
+
+#notificationHeading {
+    -fx-fill: #323232;
+    -fx-font-weight: bold;
+    -fx-font-size: 12pt;
+}
+
+#notificationText {
+    -fx-fill: #5F5F5F;
+    -fx-font-size: 10pt;
+}
+
+#textDialog {
+    -fx-fill: #323232;
+    -fx-font-size: 12px;
+}
+
+.dialogInput {
+    -fx-background-color: #eee;
+}
+
+#dialogPane,
+#dialogApplyPane,
+#dialogTextInput {
+    -fx-background-radius: 10;
+    -fx-background-color: #ffffff;
+}
+
+#dialogPane #apply,
+#dialogApplyPane #apply,
+#dialogTextInput #apply {
+    -fx-background-radius: 0 0 10 10;
+    -fx-background-insets: 0;
+    -fx-background-color: #D45F10;
+}
+
+#forgot2fa {
+    -fx-font-size: 8pt;
+    -fx-text-fill: #A9A9A9;
+}
+
+#line {
+    -fx-stroke: #C7C7C7;
+}
+
+
+/*Icons*/
+
+#icoApply {
+    -fx-fill: #fff;
+    -fx-font-size: 23pt;
+}
+
+#icoDeny {
+    -fx-fill: #fff;
+    -fx-font-size: 23pt;
+}
+
+#applyComponents {
+    -fx-background-radius: 0;
+    -fx-fill: #7C4DFF;
+    -fx-background-color: transparent;
+    -fx-font-size: 13pt;
+}
+
+#denyComponents {
+    -fx-background-radius: 0;
+    -fx-fill: #A23131;
+    -fx-background-color: transparent;
+    -fx-font-size: 13pt;
+}
+
+#applyComponents:hover,
+#applyComponents:pressed {
+    -fx-background-color: #6B36FF;
+    -fx-fill: #fff;
+}
+
+#denyComponents:hover,
+#denyComponents:pressed {
+    -fx-background-color: #AB2727;
+    -fx-fill: #fff;
+}
+
+
+/*-- DrLeonardo Design for GravitLauncher --*/

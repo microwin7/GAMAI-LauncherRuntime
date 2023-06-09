@@ -20,7 +20,7 @@
 
 <!-- DrLeonardo Design for GravitLauncher-->
 
-<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="1134.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="634.0" prefWidth="1134.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <stylesheets>
        <URL value="@../../global.css" />
        <URL value="@serverinfo.css" />
@@ -34,7 +34,7 @@
                           <Image url="@../../images/serverBg2.png" />
                       </image>
                   </ImageView>
-                  <ImageView id="serverLogo" layoutX="86.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView id="serverLogo" layoutX="22.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
                       <image>
                           <Image url="@../../images/serverLogo.png" />
                       </image>
@@ -44,7 +44,7 @@
                           <SVGPath content="M4 43.5L22 0.631744L22 86.3683L4 43.5Z" fill="#ff4f2d" />
                       </graphic>
                   </Button>
-                  <Text id="headingOnline" fontSmoothingType="LCD" layoutX="-630.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="24" textAlignment="RIGHT" wrappingWidth="172.13671067357063" x="705.0" />
+                  <Text id="headingOnline" fontSmoothingType="LCD" layoutX="-630.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" text="24" textAlignment="CENTER" wrappingWidth="172.13671067357063" x="705.0" />
                   <Text id="heading" fontSmoothingType="LCD" layoutX="341.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TECHNOMAGIC" wrappingWidth="470.13671875" />
                   <Label id="serverTitle" alignment="CENTER" layoutY="563.0" prefWidth="311.0" text="SERVER" />
                   <Label id="genreServer" alignment="CENTER" layoutY="598.0" prefWidth="311.0" text="TechnoMagic" />

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="serverButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="437.0" prefWidth="226.0" styleClass="serverButtons" stylesheets="@../serverButton_css/a5bae4d7-b809-4010-be7f-4314138cd580.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <ImageView fitHeight="437.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../../images/servers/cellBg/a5bae4d7-b809-4010-be7f-4314138cd580.png" />
+        </image>
+    </ImageView>
+   <ImageView fitHeight="437.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../images/serverBg3.png" />
+      </image>
+   </ImageView>
+   <Pane id="backcolor" layoutX="115.0" layoutY="5.0" prefHeight="39.0" prefWidth="100.0">
+      <children>
+          <HBox alignment="BASELINE_RIGHT" layoutX="7.0" layoutY="3.0">
+              <children>
+                  <Label id="online" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="4.0" layoutY="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minWidth="66.0" text="1" />
+                  <Label id="max" alignment="CENTER_RIGHT" contentDisplay="RIGHT" text="100" />
+              </children>
+          </HBox>
+      </children>
+   </Pane>
+    <Label id="serverTitle" alignment="CENTER" layoutY="371.0" prefWidth="226.0" text="SERVER" />
+    <Label id="genreServer" alignment="CENTER" layoutY="406.0" prefWidth="226.0" text="Gamai Classic" />
+</Pane>
