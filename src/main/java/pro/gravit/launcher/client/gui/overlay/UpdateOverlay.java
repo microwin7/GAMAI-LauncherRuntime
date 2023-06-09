@@ -1,5 +1,6 @@
 package pro.gravit.launcher.client.gui.overlay;
 
+import javafx.animation.RotateTransition;
 import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
 import javafx.scene.control.ButtonBase;
@@ -8,6 +9,8 @@ import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.scene.transform.Rotate;
+import javafx.util.Duration;
 import pro.gravit.launcher.AsyncDownloader;
 import pro.gravit.launcher.client.gui.JavaFXApplication;
 import pro.gravit.launcher.client.gui.helper.LookupHelper;
@@ -17,7 +20,6 @@ import pro.gravit.launcher.hasher.FileNameMatcher;
 import pro.gravit.launcher.hasher.HashedDir;
 import pro.gravit.launcher.hasher.HashedEntry;
 import pro.gravit.launcher.hasher.HashedFile;
-import pro.gravit.launcher.profiles.ClientProfile;
 import pro.gravit.launcher.profiles.optional.OptionalView;
 import pro.gravit.launcher.profiles.optional.actions.OptionalAction;
 import pro.gravit.launcher.profiles.optional.actions.OptionalActionFile;
@@ -74,6 +76,13 @@ public class UpdateOverlay extends AbstractOverlay {
         LookupHelper.<ButtonBase>lookup(pane, "#hide").setOnAction((e) -> {
             if (this.currentStage != null) this.currentStage.hide();
         });
+        RotateTransition rotate = new RotateTransition();
+        rotate.setAxis(Rotate.Z_AXIS);
+        rotate.setByAngle(360);
+        rotate.setDuration(Duration.millis(500));
+        rotate.setCycleCount(1000);
+        rotate.setNode(LookupHelper.lookup(pane, "#secondPath"));
+        rotate.play();
     }
 
     private void deleteExtraDir(Path subDir, HashedDir subHDir, boolean deleteDir) throws IOException {
@@ -157,6 +166,7 @@ public class UpdateOverlay extends AbstractOverlay {
                             case FILE:
                                 HashedFile file = (HashedFile) entry;
                                 totalSize += file.size;
+                                adds.add(new AsyncDownloader.SizedFile(path, file.size));
                                 for(PathRemapperData remapEntry : pathRemapper)
                                 {
                                     if(path.startsWith(remapEntry.key))

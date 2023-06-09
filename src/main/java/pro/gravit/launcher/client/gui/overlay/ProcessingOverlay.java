@@ -1,9 +1,12 @@
 package pro.gravit.launcher.client.gui.overlay;
 
+import javafx.animation.RotateTransition;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.scene.control.Labeled;
+import javafx.scene.transform.Rotate;
+import javafx.util.Duration;
 import pro.gravit.launcher.client.gui.JavaFXApplication;
 import pro.gravit.launcher.client.gui.helper.LookupHelper;
 import pro.gravit.launcher.client.gui.raw.AbstractOverlay;
@@ -28,6 +31,14 @@ public class ProcessingOverlay extends AbstractOverlay {
     protected void doInit() {
         // spinner = LookupHelper.lookup(pane, "#spinner"); //TODO: DrLeonardo?
         description = LookupHelper.lookup(pane, "#description");
+
+        RotateTransition rotate = new RotateTransition();
+        rotate.setAxis(Rotate.Z_AXIS);
+        rotate.setByAngle(360);
+        rotate.setDuration(Duration.millis(500));
+        rotate.setCycleCount(1000);
+        rotate.setNode(LookupHelper.lookup(pane, "#secondPath"));
+        rotate.play();
     }
 
     @Override

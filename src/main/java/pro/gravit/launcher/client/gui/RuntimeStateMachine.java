@@ -1,7 +1,11 @@
 package pro.gravit.launcher.client.gui;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import pro.gravit.launcher.ClientPermissions;
 import pro.gravit.launcher.events.request.AuthRequestEvent;
-import pro.gravit.launcher.events.request.PingServerRequestEvent;
 import pro.gravit.launcher.events.request.ProfilesRequestEvent;
 import pro.gravit.launcher.profiles.ClientProfile;
 import pro.gravit.launcher.profiles.PlayerProfile;
@@ -11,23 +15,13 @@ import pro.gravit.launcher.profiles.optional.OptionalView;
 import pro.gravit.launcher.request.Request;
 import pro.gravit.launcher.request.management.PingServerReportRequest;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 public class RuntimeStateMachine {
+    private final Map<String, OnServerPingReportCallback> serverPingReportCallbackMap = new HashMap<>();
     private AuthRequestEvent rawAuthResult;
-
     private List<ClientProfile> profiles;
     private ClientProfile profile;
     private Map<String, PingServerReportRequest.PingServerReport> serverPingReport;
     private Map<ClientProfile, OptionalView> optionalViewMap;
-    @FunctionalInterface
-    public interface OnServerPingReportCallback
-    {
-        void onServerPingReport(PingServerReportRequest.PingServerReport report);
-    }
-    private final Map<String, OnServerPingReportCallback> serverPingReportCallbackMap = new HashMap<>();
 
     public void setAuthResult(AuthRequestEvent rawAuthResult) {
         this.rawAuthResult = rawAuthResult;
@@ -152,8 +146,19 @@ public class RuntimeStateMachine {
         return rawAuthResult.accessToken;
     }
 
+    public ClientPermissions getUserPerms() {
+        if (rawAuthResult == null)
+            return null;
+        return rawAuthResult.permissions;
+    }
+
     public void exit() {
         rawAuthResult = null;
         profile = null;
+    }
+
+    @FunctionalInterface
+    public interface OnServerPingReportCallback {
+        void onServerPingReport(PingServerReportRequest.PingServerReport report);
     }
 }

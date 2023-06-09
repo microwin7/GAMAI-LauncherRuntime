@@ -1,7 +1,9 @@
 package pro.gravit.launcher.client.gui.raw;
 
 import javafx.geometry.Point2D;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.util.concurrent.atomic.AtomicReference;
@@ -49,6 +51,9 @@ public abstract class AbstractStage {
         stage.setScene(scene.getScene());
         stage.sizeToScene();
         stage.show();
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stage.setX((primScreenBounds.getWidth() - stage.getWidth()) / 2);
+        stage.setY((primScreenBounds.getHeight() - stage.getHeight()) / 2);
         this.scene = scene;
     }
 

@@ -102,13 +102,10 @@ public class JavaFXApplication extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         // System loading
-        if (runtimeSettings.locale == null)
-            runtimeSettings.locale = RuntimeSettings.DEFAULT_LOCALE;
-        try (InputStream input = getResource(String.format("runtime_%s.properties", runtimeSettings.locale.name))) {
+        try (InputStream input = getResource("language.properties")) {
             resources = new PropertyResourceBundle(input);
-        } catch (FileNotFoundException e)
-        {
-            JavaRuntimeModule.noLocaleAlert(runtimeSettings.locale.name);
+        } catch (FileNotFoundException e) {
+            JavaRuntimeModule.noLocaleAlert("language.properties");
             Platform.exit();
         }
         try {

@@ -136,10 +136,6 @@ public class MessageManager {
                 onClose.run();
                 onApplyCallback.run();
             });
-            LookupHelper.<Button>lookup(pane, "#deny").setOnAction((e) -> {
-                onClose.run();
-                onDenyCallback.run();
-            });
         }, isLauncher);
     }
 
@@ -151,7 +147,7 @@ public class MessageManager {
                         onClose.run();
                         onCloseCallback.run();
                     });
-                    TextField a = LookupHelper.<TextField>lookup(pane, "#dialogInput");
+                    TextField a = LookupHelper.lookup(pane, "#dialogInput");
                     EventHandler<ActionEvent> eventHandler = (e) -> {
                         onClose.run();
                         onApplyCallback.accept(a.getText());
@@ -177,14 +173,19 @@ public class MessageManager {
             if (isLauncher) {
                 AbstractScene currentScene = application.getCurrentScene();
                 Pane root = (Pane) currentScene.getScene().getRoot();
-                Pane shadow = new Pane();
-                shadow.setPrefHeight(root.getPrefHeight());
-                shadow.setPrefWidth(root.getPrefWidth());
-                root.getChildren().add(shadow);
+                if (currentScene.getCurrentOverlay() == null) {
+                    root.getChildren().get(0).setEffect(new GaussianBlur(10));
+                } else {
+                    currentScene.getCurrentOverlay().pane.setEffect(new GaussianBlur(10));
+                }
                 root.getChildren().add(finalPane);
                 onClose = () -> {
+                    if (currentScene.getCurrentOverlay() == null) {
+                        root.getChildren().get(0).setEffect(null);
+                    } else {
+                        currentScene.getCurrentOverlay().pane.setEffect(null);
+                    }
                     root.getChildren().remove(finalPane);
-                    root.getChildren().remove(shadow);
                 };
                 pane.setLayoutX((root.getPrefWidth() - pane.getPrefWidth()) / 2.0);
                 pane.setLayoutY((root.getPrefHeight() - pane.getPrefHeight()) / 2.0);

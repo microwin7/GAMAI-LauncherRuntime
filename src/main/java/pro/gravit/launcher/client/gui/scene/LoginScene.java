@@ -1,9 +1,13 @@
 package pro.gravit.launcher.client.gui.scene;
 
+import com.google.gson.reflect.TypeToken;
 import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.effect.GaussianBlur;
+import javafx.scene.layout.Pane;
 import javafx.util.StringConverter;
+import pro.gravit.launcher.Launcher;
 import pro.gravit.launcher.LauncherEngine;
 import pro.gravit.launcher.client.events.ClientExitPhase;
 import pro.gravit.launcher.client.gui.JavaFXApplication;
@@ -19,11 +23,18 @@ import pro.gravit.launcher.request.auth.password.AuthECPassword;
 import pro.gravit.launcher.request.auth.password.AuthTOTPPassword;
 import pro.gravit.launcher.request.update.LauncherRequest;
 import pro.gravit.launcher.request.update.ProfilesRequest;
+import pro.gravit.utils.helper.CommonHelper;
 import pro.gravit.utils.helper.LogHelper;
 import pro.gravit.utils.helper.SecurityHelper;
 
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.lang.reflect.Type;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.nio.charset.StandardCharsets;
 import java.util.List;
+import java.util.Map;
 
 public class LoginScene extends AbstractScene {
     public boolean isLoginStarted;
@@ -40,7 +51,7 @@ public class LoginScene extends AbstractScene {
 
     @Override
     public void doInit() {
-        Node layout = LookupHelper.lookup(scene.getRoot(), "#layout", "#authPane");
+        Node layout = scene.getRoot();
         sceneBaseInit(layout);
         loginField = LookupHelper.lookup(layout, "#login");
         if (application.runtimeSettings.login != null)
@@ -52,7 +63,7 @@ public class LoginScene extends AbstractScene {
             passwordField.setPromptText(application.getTranslation("runtime.scenes.login.login.password.saved"));
             LookupHelper.<CheckBox>lookup(layout, "#savePassword").setSelected(true);
         }
-        autoenter = LookupHelper.<CheckBox>lookup(layout, "#autoenter");
+        autoenter = LookupHelper.lookup(layout, "#autoenter");
         autoenter.setSelected(application.runtimeSettings.autoAuth);
         autoenter.setOnAction((event) -> application.runtimeSettings.autoAuth = autoenter.isSelected());
         if (application.guiModuleConfig.createAccountURL != null)
@@ -64,6 +75,17 @@ public class LoginScene extends AbstractScene {
         authList = LookupHelper.lookup(layout, "#combologin");
         authList.setConverter(new AuthConverter());
         LookupHelper.<ButtonBase>lookup(layout, "#goAuth").setOnAction((e) -> contextHelper.runCallback(this::loginWithGui).run());
+
+        LookupHelper.<Pane>lookup(layout, "#about").setVisible(false);
+        LookupHelper.<ButtonBase>lookup(layout, "#aboutAct").setOnAction(event -> {
+            LookupHelper.<Pane>lookup(layout, "#authPane").setEffect(new GaussianBlur(10));
+            LookupHelper.<Pane>lookup(layout, "#about").setVisible(true);
+        });
+        LookupHelper.<ButtonBase>lookup(layout, "#closeAbout").setOnAction(event -> {
+            LookupHelper.<Pane>lookup(layout, "#authPane").setEffect(null);
+            LookupHelper.<Pane>lookup(layout, "#about").setVisible(false);
+        });
+
         // Verify Launcher
         {
             LauncherRequest launcherRequest = new LauncherRequest();
@@ -112,6 +134,8 @@ public class LoginScene extends AbstractScene {
 
     @Override
     public void reset() {
+        LookupHelper.<Pane>lookup(scene.getRoot(), "#authPane").setEffect(null);
+        LookupHelper.<Pane>lookup(scene.getRoot(), "#about").setVisible(false);
         passwordField.getStyleClass().removeAll("hasSaved");
         passwordField.setPromptText(application.getTranslation("runtime.scenes.login.login.password"));
         passwordField.setText("");
@@ -169,6 +193,40 @@ public class LoginScene extends AbstractScene {
                 application.runtimeSettings.encryptedPassword = password;
                 application.runtimeSettings.lastAuth = authId;
             }
+
+            CommonHelper.newThread("Get user stats", true, () -> {
+                try {
+                    if (application.guiModuleConfig.apiUrl == null)
+                        throw new NullPointerException("Regenerate the config \"JavaRuntime.json\"");
+                    URL url = new URL(String.format(application.guiModuleConfig.apiUrl, result.playerProfile.username));
+
+                    HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+                    connection.setDoOutput(true);
+                    connection.setRequestMethod("GET");
+                    connection.setRequestProperty("Accept", "application/json");
+                    connection.setConnectTimeout(10000);
+
+                    InputStreamReader reader;
+                    int statusCode = connection.getResponseCode();
+
+                    if (200 <= statusCode && statusCode < 300)
+                        reader = new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8);
+                    else
+                        reader = new InputStreamReader(connection.getErrorStream(), StandardCharsets.UTF_8);
+                    try {
+                        Type itemsMapType = new TypeToken<Map<String, ServerInfoScene.UserStat[]>>() {
+                        }.getType();
+                        application.gui.serverInfoScene.statistics = Launcher.gsonManager.gson.fromJson(reader, itemsMapType);
+                        if (application.getCurrentScene() instanceof ServerInfoScene)
+                            application.gui.serverInfoScene.updateStats();
+                    } catch (Exception e) {
+                        application.gui.serverInfoScene.statistics = null;
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }).start();
+
             onGetProfiles();
 
         }, (error) -> {

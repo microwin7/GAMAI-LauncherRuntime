@@ -51,7 +51,7 @@ public class OptionsOverlay extends AbstractOverlay {
                 errorHandle(ex);
             }
         });
-        componentList = (Pane) LookupHelper.<ScrollPane>lookup(layout, "#serverImage", "#optionslist").getContent();
+        componentList = (Pane) LookupHelper.<ScrollPane>lookup(layout, "#optionslist").getContent();
         LookupHelper.<ButtonBase>lookup(layout, "#close").setOnAction(
                 (e) -> Platform.exit());
         LookupHelper.<ButtonBase>lookup(layout, "#hide").setOnAction((e) -> {
@@ -92,17 +92,23 @@ public class OptionsOverlay extends AbstractOverlay {
         CheckBox checkBox = new CheckBox();
         checkBox.setSelected(value);
         checkBox.setText(name);
-        Text desc = new Text();
-        desc.setText(description);
         container.getChildren().add(checkBox);
-        container.getChildren().add(desc);
         checkBox.setOnAction((e) -> onChanged.accept(checkBox.isSelected()));
         componentList.getChildren().add(container);
         container.getStyleClass().add("optContainer");
         checkBox.getStyleClass().add("optCheckbox");
+        int x4 = 25;
+        x4 *= --padding;
+        VBox.setMargin(container, new Insets(-10, 0, 0,  x4));
+        FlowPane container1 = new FlowPane();
+        Text desc = new Text();
+        desc.setText(description);
+        componentList.getChildren().add(container1);
+        VBox.setMargin(container1, new Insets(-5, 0, 0, 25 * ++padding));
+        container1.getChildren().add(desc);
         desc.getStyleClass().add("optDescription");
-        FlowPane.setMargin(desc, new Insets(0, 0, 0, 30));
-        VBox.setMargin(container, new Insets(0, 0, 0, 50 * padding));
+        FlowPane.setMargin(desc, new Insets(-5, 0, 0, 25));
+
         return checkBox::setSelected;
     }
 

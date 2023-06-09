@@ -89,7 +89,8 @@ public abstract class AbstractScene implements AllowDisable {
         disable();
         currentOverlayNode = newOverlay;
         Pane root = (Pane) scene.getRoot();
-        root.getChildren().get(0).setEffect(new GaussianBlur(10));
+        if(newOverlay == application.gui.processingOverlay.pane)
+            root.getChildren().get(0).setEffect(new GaussianBlur(10));
 
         root.getChildren().add(newOverlay);
         newOverlay.setLayoutX((root.getPrefWidth() - newOverlay.getPrefWidth()) / 2.0);
@@ -115,7 +116,7 @@ public abstract class AbstractScene implements AllowDisable {
         fade(currentOverlayNode, delay, 1.0, 0.0, (e) -> {
             root.getChildren().remove(currentOverlayNode);
             root.requestFocus();
-            root.getChildren().get(0).setEffect(new GaussianBlur(0));
+            root.getChildren().get(0).setEffect(null);
             currentOverlayNode = null;
             if (currentOverlay != null) currentOverlay.currentStage = null;
             if (currentOverlay != null) currentOverlay.reset();
